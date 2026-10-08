@@ -1,0 +1,11 @@
+{
+  "siteUrl": "https://habib1010-tech.github.io/hazeon/",
+  "customDomain": "",
+  "email": "hello@hazeon.dev",
+  "github": "https://github.com/habib1010-tech",
+  "legalName": "HAZEON Software Solutions",
+  "defaultLocale": "en",
+  "locales": ["en", "fr", "ar"],
+  "rtlLocales": ["ar"],
+  "openRoles": 5
+}

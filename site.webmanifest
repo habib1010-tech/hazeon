@@ -1,13 +1,27 @@
 {
-  "name": "HAZEON — AI-First Software Studio",
+  "name": "HAZEON, software studio",
   "short_name": "HAZEON",
+  "description": "AI products, web platforms and MVPs, engineered properly.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "background_color": "#00141f",
   "theme_color": "#00141f",
   "icons": [
-    { "src": "assets/img/icon-192.png", "sizes": "192x192", "type": "image/png" },
-    { "src": "assets/img/icon-512.png", "sizes": "512x512", "type": "image/png" }
+    {
+      "src": "assets/img/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/img/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/img/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
   ]
 }

@@ -1,0 +1,4 @@
+Contact: mailto:hello@hazeon.dev
+Expires: 2027-10-08T12:12:24Z
+Preferred-Languages: en, fr, ar
+Canonical: https://habib1010-tech.github.io/hazeon/.well-known/security.txt

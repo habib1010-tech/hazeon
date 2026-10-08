@@ -1,257 +1,298 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr" data-theme="dark">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>HAZEON — AI-First Software Studio | MVPs, AI Agents &amp; Secure Platforms</title>
-  <meta name="description" content="HAZEON is an AI-first software studio. We design, build and scale secure, production-grade products — AI agents, SaaS platforms and rapid MVPs — up to 3× faster than traditional agencies.">
-  <meta name="theme-color" content="#00141f">
-  <meta name="color-scheme" content="dark">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-aGqEgIPxG1CdO80rEInndo3k5r8qTtvDN3/KJyIggOA='; style-src 'self'; style-src-attr 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; manifest-src 'self'; worker-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' mailto:">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>HAZEON | Software studio for AI products, web platforms and MVPs</title>
+  <meta name="description" content="HAZEON designs and engineers AI assistants, SaaS platforms and MVPs. Weekly demos, security built in, and you own 100% of the code.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="https://habib1010-tech.github.io/hazeon/">
+  <link rel="alternate" hreflang="en" href="https://habib1010-tech.github.io/hazeon/">
+  <link rel="alternate" hreflang="fr" href="https://habib1010-tech.github.io/hazeon/fr/">
+  <link rel="alternate" hreflang="ar" href="https://habib1010-tech.github.io/hazeon/ar/">
+  <link rel="alternate" hreflang="x-default" href="https://habib1010-tech.github.io/hazeon/">
+  <meta name="theme-color" content="#00141f">
+  <meta name="color-scheme" content="dark light">
 
-  <!-- Open Graph / social -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="HAZEON">
-  <meta property="og:title" content="HAZEON — AI-First Software Studio">
-  <meta property="og:description" content="We engineer AI agents, SaaS platforms and MVPs that scale. Secure by default, delivered up to 3× faster.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="fr_FR">
+  <meta property="og:locale:alternate" content="ar_AR">
+  <meta property="og:title" content="HAZEON, a software studio that builds things properly">
+  <meta property="og:description" content="AI assistants, web platforms and MVPs, engineered by people who care how they're built.">
   <meta property="og:url" content="https://habib1010-tech.github.io/hazeon/">
-  <meta property="og:image" content="https://habib1010-tech.github.io/hazeon/assets/img/og-image.png">
+  <meta property="og:image" content="https://habib1010-tech.github.io/hazeon/assets/img/og-en.png">
+  <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="HAZEON — AI-First Software Studio">
+  <meta property="og:image:alt" content="The HAZEON card: &quot;We build software that holds up.&quot; next to the HZ mark split into four labelled parts">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="HAZEON — AI-First Software Studio">
-  <meta name="twitter:description" content="We engineer AI agents, SaaS platforms and MVPs that scale.">
-  <meta name="twitter:image" content="https://habib1010-tech.github.io/hazeon/assets/img/og-image.png">
+  <meta name="twitter:title" content="HAZEON, a software studio that builds things properly">
+  <meta name="twitter:description" content="AI assistants, web platforms and MVPs, engineered by people who care how they're built.">
+  <meta name="twitter:image" content="https://habib1010-tech.github.io/hazeon/assets/img/og-en.png">
 
-  <!-- Icons -->
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
+  <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
 
-  <!-- Fonts (self-hosted) -->
-  <link rel="preload" href="assets/fonts/poppins-bold.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
-
-  <script>
-    document.documentElement.classList.add('js');
-    (function () {
-      var m = new URLSearchParams(location.search).get('motion');
-      var reduce = m ? m === 'reduced' : window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (reduce) document.documentElement.classList.add('reduced-motion');
-    })();
-  </script>
-  <noscript><style>.preloader{display:none!important}</style></noscript>
-
-  <link rel="stylesheet" href="assets/css/style.css">
-
-  <script type="importmap">
-    {
-      "imports": {
-        "three": "./vendor/three/three.module.min.js",
-        "three/addons/": "./vendor/three/"
-      }
-    }
-  </script>
-  <script src="vendor/gsap/gsap.min.js" defer></script>
-  <script src="vendor/gsap/ScrollTrigger.min.js" defer></script>
-  <script src="vendor/lenis/lenis.min.js" defer></script>
-  <script type="module" src="assets/js/main.js"></script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "HAZEON",
-    "alternateName": "HAZEON Software Solutions",
-    "url": "https://habib1010-tech.github.io/hazeon/",
-    "logo": "https://habib1010-tech.github.io/hazeon/assets/img/icon-512.png",
-    "email": "hello@hazeon.dev",
-    "description": "AI-first software studio building secure, scalable products: AI agents, SaaS platforms, rapid MVPs, DevSecOps and cloud infrastructure.",
-    "knowsAbout": ["Artificial Intelligence", "LLM Agents", "Retrieval-Augmented Generation", "SaaS Development", "MVP Development", "DevSecOps", "Cloud Infrastructure", "Legacy Modernization"]
-  }
-  </script>
+  <script>(function(){var d=document.documentElement,t=null,m=null;try{t=localStorage.getItem('theme');m=localStorage.getItem('motion')}catch(e){}var q=/[?&]motion=(full|reduced)\b/.exec(location.search);if(q)m=q[1];if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';if(m!=='full'&&m!=='reduced')m=matchMedia('(prefers-reduced-motion: reduce)').matches?'reduced':'full';d.setAttribute('data-theme',t);d.setAttribute('data-motion',m);d.classList.add('js');var c=document.querySelector('meta[name="theme-color"]');if(c)c.setAttribute('content',t==='light'?'#f4f1ea':'#00141f');setTimeout(function(){if(!d.classList.contains('ready'))d.classList.remove('js')},4000)})();</script>
+  <link rel="stylesheet" href="assets/build/style-54LRHEYK.css">
+  <script type="module" src="assets/build/main-ZADUEQCL.js"></script>
+  
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://habib1010-tech.github.io/hazeon/#organization","name":"HAZEON","legalName":"HAZEON Software Solutions","url":"https://habib1010-tech.github.io/hazeon/","logo":"https://habib1010-tech.github.io/hazeon/assets/img/icon-512.png","email":"hello@hazeon.dev","description":"A software studio that designs, builds and runs AI products, web platforms and MVPs.","sameAs":["https://github.com/habib1010-tech"],"knowsAbout":["Software engineering","Artificial intelligence","Retrieval-augmented generation","SaaS","DevSecOps","Cloud infrastructure"]},{"@type":"WebSite","@id":"https://habib1010-tech.github.io/hazeon/#website","url":"https://habib1010-tech.github.io/hazeon/","name":"HAZEON","inLanguage":["en","fr","ar"],"publisher":{"@id":"https://habib1010-tech.github.io/hazeon/#organization"}},{"@type":"WebPage","@id":"https://habib1010-tech.github.io/hazeon/#webpage","url":"https://habib1010-tech.github.io/hazeon/","name":"HAZEON | Software studio for AI products, web platforms and MVPs","description":"HAZEON designs and engineers AI assistants, SaaS platforms and MVPs. Weekly demos, security built in, and you own 100% of the code.","inLanguage":"en","isPartOf":{"@id":"https://habib1010-tech.github.io/hazeon/#website"},"about":{"@id":"https://habib1010-tech.github.io/hazeon/#organization"}}]}</script>
 </head>
 <body>
-  <!-- Reusable monogram -->
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <svg class="sprite" aria-hidden="true" focusable="false">
     <symbol id="hz-mark" viewBox="45 16 607 826">
       <path fill="currentColor" d="M163 134 L55 198 L55 660 L165 724 L166 484 L294 480 L294 374 L167 370 Z"/>
-      <path fill="var(--hz-light, #9eadc8)" d="M298 190 L404 250 L406 364 L298 546 Z"/>
+      <path class="hz-light" d="M298 190 L404 250 L406 364 L298 546 Z"/>
       <path fill="currentColor" d="M348 26 L297 56 L297 120 L527 256 L297 650 L297 800 L352 832 L407 800 L407 677 L642 284 L642 202 Z"/>
-      <path fill="var(--hz-light, #9eadc8)" d="M407 678 L638 540 L638 658 L407 795 Z"/>
+      <path class="hz-light" d="M407 678 L638 540 L638 658 L407 795 Z"/>
     </symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.6A8.4 8.4 0 0 1 9.4 4a8.4 8.4 0 1 0 10.6 10.6z"/></symbol>
   </svg>
 
   <a class="skip-link" href="#main">Skip to content</a>
+  <div class="progress" aria-hidden="true"><span></span></div>
+  <div class="cursor" aria-hidden="true"><span></span></div>
 
-  <!-- Preloader -->
-  <div class="preloader" id="preloader" aria-hidden="true">
-    <div class="preloader__center">
-      <svg class="preloader__mark" viewBox="45 16 607 826">
-        <path class="pl-d" pathLength="1" d="M163 134 L55 198 L55 660 L165 724 L166 484 L294 480 L294 374 L167 370 Z"/>
-        <path class="pl-l" pathLength="1" d="M298 190 L404 250 L406 364 L298 546 Z"/>
-        <path class="pl-d" pathLength="1" d="M348 26 L297 56 L297 120 L527 256 L297 650 L297 800 L352 832 L407 800 L407 677 L642 284 L642 202 Z"/>
-        <path class="pl-l" pathLength="1" d="M407 678 L638 540 L638 658 L407 795 Z"/>
-      </svg>
-      <p class="preloader__word">HAZEON</p>
-    </div>
-    <div class="preloader__foot">
-      <span class="preloader__label">Engineering the experience</span>
-      <span class="preloader__count"><span id="preloader-count">0</span>%</span>
-    </div>
-    <div class="preloader__bar"><span id="preloader-bar"></span></div>
-  </div>
-
-  <div class="cursor is-hidden" aria-hidden="true"><span class="cursor__ring"></span><span class="cursor__dot"></span></div>
-  <div class="grain" aria-hidden="true"></div>
-  <div class="scroll-progress" aria-hidden="true"><span></span></div>
-
-  <!-- Navigation -->
+  <!-- ============ NAV ============ -->
   <header class="nav" id="nav">
     <div class="nav__inner">
-      <a href="#top" class="brand" aria-label="HAZEON — back to top">
+      <a href="#top" class="brand" aria-label="HAZEON, back to top">
         <svg class="brand__mark" aria-hidden="true"><use href="#hz-mark"/></svg>
         <span class="brand__word">HAZEON</span>
       </a>
-      <nav class="nav__links" aria-label="Primary">
+      <nav class="nav__links" aria-label="Main">
         <a href="#services">Services</a>
         <a href="#process">Process</a>
-        <a href="#why">Why us</a>
-        <a href="#careers">Careers <span class="nav__badge">5</span></a>
+        <a href="#engage">Work with us</a>
+        <a href="#careers">Careers <span class="nav__count">5</span></a>
         <a href="#faq">FAQ</a>
       </nav>
-      <a href="#contact" class="btn btn--primary btn--sm nav__cta" data-magnetic>
-        <span>Start a project</span>
-        <svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </a>
-      <button class="nav__burger" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
-        <span></span><span></span>
-      </button>
+      <div class="nav__tools">
+        <div class="lang" role="group" aria-label="Language"><a href="./" hreflang="en" lang="en" aria-current="page" data-lang="en"><span aria-hidden="true">EN</span><span class="sr-only">English</span></a><a href="fr/" hreflang="fr" lang="fr" data-lang="fr"><span aria-hidden="true">FR</span><span class="sr-only">Français</span></a><a href="ar/" hreflang="ar" lang="ar" data-lang="ar"><span aria-hidden="true">AR</span><span class="sr-only">العربية</span></a></div>
+        <button class="icon-btn theme-toggle" type="button" data-theme-toggle aria-label="Switch to light theme">
+          <svg class="theme-toggle__sun" aria-hidden="true"><use href="#i-sun"/></svg>
+          <svg class="theme-toggle__moon" aria-hidden="true"><use href="#i-moon"/></svg>
+        </button>
+        <a href="#contact" class="btn btn--primary btn--sm nav__cta"><span>Start a project</span><svg class="btn__arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <button class="nav__burger" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu"><span></span><span></span></button>
+      </div>
     </div>
   </header>
 
-  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
-    <nav class="mobile-menu__links" aria-label="Mobile">
-      <a href="#services"><span>01</span>Services</a>
-      <a href="#process"><span>02</span>Process</a>
-      <a href="#why"><span>03</span>Why us</a>
-      <a href="#careers"><span>04</span>Careers</a>
-      <a href="#faq"><span>05</span>FAQ</a>
-      <a href="#contact"><span>06</span>Contact</a>
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <nav class="mobile-menu__links" aria-label="Main">
+      <a href="#services"><span class="mono">01</span>Services</a>
+      <a href="#process"><span class="mono">02</span>Process</a>
+      <a href="#engage"><span class="mono">03</span>Work with us</a>
+      <a href="#careers"><span class="mono">04</span>Careers</a>
+      <a href="#faq"><span class="mono">05</span>FAQ</a>
+      <a href="#contact"><span class="mono">06</span>Contact</a>
     </nav>
     <div class="mobile-menu__foot">
-      <a href="mailto:hello@hazeon.dev" class="js-email">hello@hazeon.dev</a>
-      <p>AI-first software studio</p>
+      <div class="lang lang--names" role="group" aria-label="Language"><a href="./" hreflang="en" lang="en" aria-current="page" data-lang="en">English</a><a href="fr/" hreflang="fr" lang="fr" data-lang="fr">Français</a><a href="ar/" hreflang="ar" lang="ar" data-lang="ar">العربية</a></div>
+      <button class="icon-btn theme-toggle" type="button" data-theme-toggle aria-label="Switch to light theme">
+        <svg class="theme-toggle__sun" aria-hidden="true"><use href="#i-sun"/></svg>
+        <svg class="theme-toggle__moon" aria-hidden="true"><use href="#i-moon"/></svg>
+      </button>
     </div>
   </div>
 
   <main id="main" tabindex="-1">
     <!-- ============ HERO ============ -->
-    <section class="hero" id="top" aria-label="Introduction">
+    <section class="hero" id="top" aria-labelledby="hero-title">
       <div class="hero__sticky">
-        <div class="hero__bg" aria-hidden="true">
-          <div class="hero__glow hero__glow--a"></div>
-          <div class="hero__glow hero__glow--b"></div>
-          <div class="hero__floor"></div>
-        </div>
+        <div class="hero__bg" aria-hidden="true"><div class="hero__grid"></div></div>
         <canvas class="hero__canvas" id="hero-canvas" aria-hidden="true"></canvas>
-        <div class="hero__fallback" aria-hidden="true">
-          <svg><use href="#hz-mark"/></svg>
+        <div class="hero__fallback" aria-hidden="true"><svg><use href="#hz-mark"/></svg></div>
+
+        <div class="hero__parts" aria-hidden="true">
+          <span class="part"><i></i><b class="mono">A</b>Engineering</span>
+          <span class="part"><i></i><b class="mono">B</b>Design</span>
+          <span class="part"><i></i><b class="mono">C</b>Product thinking</span>
+          <span class="part"><i></i><b class="mono">D</b>Security & operations</span>
         </div>
+        <p class="hero__statement" aria-hidden="true">Good software is a sum of <mark>well-made parts.</mark></p>
 
         <div class="container hero__content">
-          <p class="hero__badge" data-hero-fade>
-            <span class="pulse" aria-hidden="true"></span>
-            Now accepting new projects
-          </p>
-          <h1 class="hero__title">
-            <span class="sr-only">We engineer AI agents, SaaS apps, MVPs and automations that scale.</span>
-            <span class="hero__line" aria-hidden="true"><span class="hero__line-inner">We engineer</span></span>
-            <span class="hero__line" aria-hidden="true">
-              <span class="hero__line-inner">
-                <span class="rotator">
-                  <span class="rotator__word is-active">AI agents</span>
-                  <span class="rotator__word">SaaS apps</span>
-                  <span class="rotator__word">MVPs</span>
-                  <span class="rotator__word">automations</span>
-                  <span class="rotator__word">products</span>
-                </span>
-              </span>
-            </span>
-            <span class="hero__line" aria-hidden="true"><span class="hero__line-inner">that <em class="text-gradient">scale.</em></span></span>
+          <p class="hero__kicker mono intro-fade"><span class="hero__kicker-mark"></span>HAZEON / Software studio</p>
+          <h1 class="hero__title" id="hero-title">
+            <span class="hero__line"><span class="hero__line-inner">We build software</span></span>
+            <span class="hero__line"><span class="hero__line-inner">that <mark>holds up.</mark></span></span>
           </h1>
-          <p class="hero__lead" data-hero-fade>
-            HAZEON is an AI-first software studio. We turn bold ideas into secure, production-grade products — up to <strong>3× faster</strong> than traditional agencies, without cutting corners.
-          </p>
-          <div class="hero__ctas" data-hero-fade>
-            <a href="#contact" class="btn btn--primary btn--lg" data-magnetic>
-              <span>Start your project</span>
-              <svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </a>
-            <a href="#careers" class="btn btn--ghost btn--lg" data-magnetic>
-              <span>We're hiring</span>
-              <span class="btn__pill">5 roles</span>
-            </a>
+          <p class="hero__lead intro-fade">HAZEON is a small studio that designs and engineers AI products, web platforms and MVPs. You work directly with the people writing your code.</p>
+          <div class="hero__ctas intro-fade">
+            <a href="#contact" class="btn btn--primary btn--lg" data-magnetic><span>Start a project</span><svg class="btn__arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a href="#careers" class="btn btn--ghost btn--lg" data-magnetic><span>See open roles</span><span class="btn__count mono">5</span></a>
           </div>
         </div>
 
-        <div class="hero__statement" aria-hidden="true">
-          <p>Engineered<br><span class="text-gradient">piece by piece.</span></p>
-        </div>
-
-        <div class="container hero__footer" data-hero-fade>
-          <div class="scroll-cue"><span class="scroll-cue__track"><span></span></span>Scroll to explore</div>
-          <ul class="hero__tags">
-            <li>AI-first</li>
-            <li>Secure by default</li>
-            <li>Built to scale</li>
-          </ul>
+        <div class="container hero__footer">
+          <p class="scroll-cue mono intro-fade"><span class="scroll-cue__line" aria-hidden="true"></span>Scroll</p>
+          <p class="hero__figure mono intro-fade">Fig. 01. Our mark, in four parts. <span class="hero__hint">Scroll to take it apart.</span></p>
         </div>
       </div>
     </section>
 
-    <!-- ============ MARQUEE ============ -->
-    <section class="marquee" aria-label="What we build">
-      <div class="marquee__row" data-marquee="1">
-        <div class="marquee__track">
-          <span>AI Agents</span><i aria-hidden="true"></i><span class="outline">Rapid MVPs</span><i aria-hidden="true"></i><span>SaaS Platforms</span><i aria-hidden="true"></i><span class="outline">DevSecOps</span><i aria-hidden="true"></i><span>Cloud Native</span><i aria-hidden="true"></i><span class="outline">Automation</span><i aria-hidden="true"></i>
-        </div>
-      </div>
-      <div class="marquee__row marquee__row--alt" data-marquee="-1" aria-hidden="true">
-        <div class="marquee__track">
-          <span class="outline">RAG &amp; LLMs</span><i></i><span>Legacy Modernization</span><i></i><span class="outline">Fintech Security</span><i></i><span>Web &amp; Mobile</span><i></i><span class="outline">Data Pipelines</span><i></i><span>Product Design</span><i></i>
-        </div>
+    <!-- ============ TICKER ============ -->
+    <section class="ticker" aria-label="What we build">
+      <div class="ticker__row" data-marquee>
+        <ul class="ticker__track">
+          <li>AI assistants</li><li>Web platforms</li><li>MVPs</li><li>Automation</li><li>Security</li><li>Cloud & DevOps</li><li>Legacy rewrites</li><li>Mobile apps</li>
+        </ul>
       </div>
     </section>
 
-    <!-- ============ MANIFESTO ============ -->
-    <section class="manifesto section" id="about" aria-labelledby="about-title">
+    <!-- ============ STUDIO ============ -->
+    <section class="studio section" id="studio" aria-labelledby="studio-title">
       <div class="container">
-        <p class="eyebrow" data-reveal><span>About HAZEON</span></p>
-        <h2 class="sr-only" id="about-title">About HAZEON</h2>
-        <p class="manifesto__text" data-words>
-          Most agencies sell hours. We ship outcomes. HAZEON pairs senior engineering with AI-accelerated workflows, so you get production-grade software faster — secure by default, built to scale, and 100% yours.
-        </p>
-        <div class="stats">
-          <div class="stat" data-reveal>
-            <p class="stat__num"><span data-count="3">3</span><span class="stat__unit">×</span></p>
-            <p class="stat__label">Faster MVP delivery with AI-first engineering workflows</p>
+        <p class="sec-index" data-reveal><span class="mono">01</span>Studio</p>
+        <h2 class="sr-only" id="studio-title">About HAZEON</h2>
+        <p class="studio__text" data-words>We take on <b>a few projects at a time</b> and put experienced engineers on each one. AI speeds up the repetitive work: tests, migrations, boilerplate. <b>The decisions stay with people</b>, and everything we build is <b>yours</b>.</p>
+        <dl class="facts">
+          <div class="fact" data-reveal>
+            <dt class="fact__value"><span class="fact__num" data-count="15">15</span><span class="fact__unit">min</span></dt>
+            <dd>First call. Free, and you leave with a technical roadmap.</dd>
           </div>
-          <div class="stat" data-reveal>
-            <p class="stat__num"><span data-count="100">100</span><span class="stat__unit">%</span></p>
-            <p class="stat__label">Code &amp; IP ownership. No lock-in, ever.</p>
+          <div class="fact" data-reveal>
+            <dt class="fact__value"><span class="fact__num" data-count="1">1</span><span class="fact__unit">week</span></dt>
+            <dd>Between two live demos of your product.</dd>
           </div>
-          <div class="stat" data-reveal>
-            <p class="stat__num"><span data-count="15">15</span><span class="stat__unit">min</span></p>
-            <p class="stat__label">Discovery call to get your free technical roadmap</p>
+          <div class="fact" data-reveal>
+            <dt class="fact__value"><span class="fact__num" data-count="100">100</span><span class="fact__unit">%</span></dt>
+            <dd>Of the code, designs and IP belong to you.</dd>
           </div>
-          <div class="stat" data-reveal>
-            <p class="stat__num"><span data-count="1">1</span><span class="stat__unit">wk</span></p>
-            <p class="stat__label">Between live demos. You see progress every week.</p>
+          <div class="fact" data-reveal>
+            <dt class="fact__value"><span class="fact__num">NDA</span></dt>
+            <dd>Signed before you share any details.</dd>
           </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ============ ANATOMY (3D exploded stack) ============ -->
+    <section class="anatomy section" id="anatomy" aria-labelledby="anatomy-title">
+      <div class="container">
+        <header class="sec-head">
+          <p class="sec-index" data-reveal><span class="mono">02</span>What we build</p>
+          <h2 class="sec-title" id="anatomy-title" data-split>What goes into a product we ship.</h2>
+          <p class="sec-lead" data-reveal>Most of the work is invisible to the people using it. Here is a typical product, layer by layer, and what we take care of at each level.</p>
+        </header>
+
+        <div class="anatomy__body">
+          <figure class="anatomy__figure" aria-hidden="true">
+            <div class="frame">
+              <div class="stack" data-stack>
+                <div class="stack__scene">
+                  <div class="plate" data-layer="4">
+                    <svg viewBox="0 0 200 200" class="plate__art">
+                      <rect class="a-line" x="22" y="30" width="156" height="140" rx="6"/>
+                      <path class="a-line" d="M22 48h156"/>
+                      <circle class="a-dot" cx="33" cy="39" r="2.6"/><circle class="a-dot" cx="42" cy="39" r="2.6"/><circle class="a-dot" cx="51" cy="39" r="2.6"/>
+                      <rect class="a-fill" x="32" y="58" width="34" height="102" rx="3"/>
+                      <rect class="a-fill" x="74" y="58" width="94" height="30" rx="3"/>
+                      <rect class="a-line" x="74" y="96" width="45" height="34" rx="3"/>
+                      <rect class="a-line" x="123" y="96" width="45" height="34" rx="3"/>
+                      <rect class="a-accent" x="74" y="140" width="42" height="12" rx="3"/>
+                    </svg>
+                  </div>
+                  <div class="plate" data-layer="3">
+                    <svg viewBox="0 0 200 200" class="plate__art">
+                      <path class="a-flow" d="M76 48 L100 100 M76 100 H100 M76 152 L100 100 M124 48 L100 100 M124 100 H100 M124 152 L100 100"/>
+                      <rect class="a-line" x="28" y="40" width="48" height="16" rx="8"/>
+                      <rect class="a-line" x="28" y="92" width="48" height="16" rx="8"/>
+                      <rect class="a-line" x="28" y="144" width="48" height="16" rx="8"/>
+                      <rect class="a-line" x="124" y="40" width="48" height="16" rx="8"/>
+                      <rect class="a-line" x="124" y="92" width="48" height="16" rx="8"/>
+                      <rect class="a-line" x="124" y="144" width="48" height="16" rx="8"/>
+                      <circle class="a-fill" cx="100" cy="100" r="17"/>
+                      <circle class="a-hi" cx="100" cy="100" r="17"/>
+                      <path class="a-line" d="M93 100h14M100 93v14"/>
+                    </svg>
+                  </div>
+                  <div class="plate" data-layer="2">
+                    <svg viewBox="0 0 200 200" class="plate__art">
+                      <path class="a-flow" d="M100 100 L100 38 M100 100 L154 69 M100 100 L154 131 M100 100 L100 162 M100 100 L46 131 M100 100 L46 69"/>
+                      <path class="a-line" d="M100 38 L154 69 L154 131 L100 162 L46 131 L46 69 Z"/>
+                      <circle class="a-node" cx="100" cy="38" r="8"/><circle class="a-node" cx="154" cy="69" r="8"/><circle class="a-node" cx="154" cy="131" r="8"/>
+                      <circle class="a-node" cx="100" cy="162" r="8"/><circle class="a-node" cx="46" cy="131" r="8"/><circle class="a-node" cx="46" cy="69" r="8"/>
+                      <circle class="a-fill" cx="100" cy="100" r="22"/>
+                      <circle class="a-hi" cx="100" cy="100" r="22"/>
+                      <circle class="a-hi a-pulse" cx="100" cy="100" r="22"/>
+                      <circle class="a-accent" cx="100" cy="100" r="6"/>
+                    </svg>
+                  </div>
+                  <div class="plate" data-layer="1">
+                    <svg viewBox="0 0 200 200" class="plate__art">
+                      <rect class="a-line" x="24" y="40" width="92" height="120" rx="4"/>
+                      <path class="a-line" d="M24 64h92M24 88h92M24 112h92M24 136h92M56 40v120"/>
+                      <rect class="a-fill" x="24" y="40" width="92" height="24" rx="4"/>
+                      <path class="a-line" d="M134 56v84c0 6 11 10 24 10s24-4 24-10V56"/>
+                      <ellipse class="a-line" cx="158" cy="56" rx="24" ry="9"/>
+                      <path class="a-line" d="M134 84c0 6 11 10 24 10s24-4 24-10M134 112c0 6 11 10 24 10s24-4 24-10"/>
+                      <circle class="a-accent" cx="158" cy="56" r="3.5"/>
+                    </svg>
+                  </div>
+                  <div class="plate" data-layer="0">
+                    <svg viewBox="0 0 200 200" class="plate__art">
+                      <rect class="a-line" x="36" y="36" width="128" height="26" rx="3"/>
+                      <rect class="a-line" x="36" y="70" width="128" height="26" rx="3"/>
+                      <rect class="a-line" x="36" y="104" width="128" height="26" rx="3"/>
+                      <circle class="a-led" cx="48" cy="49" r="3"/><circle class="a-led" cx="48" cy="83" r="3"/><circle class="a-led" cx="48" cy="117" r="3"/>
+                      <path class="a-line" d="M110 49h44M110 83h44M110 117h44"/>
+                      <path class="a-flow" d="M36 158h128"/>
+                      <rect class="a-fill" x="30" y="152" width="12" height="12" rx="2"/><rect class="a-fill" x="74" y="152" width="12" height="12" rx="2"/><rect class="a-fill" x="114" y="152" width="12" height="12" rx="2"/>
+                      <rect class="a-accent" x="158" y="152" width="12" height="12" rx="2"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <figcaption class="frame__caption mono">Fig. 02. A product, taken apart.</figcaption>
+            </div>
+          </figure>
+
+          <ol class="anatomy__steps">
+            <li class="layer-step" data-layer="4">
+              <p class="layer-step__num mono">L5</p>
+              <h3>Interface</h3>
+              <p>Web and mobile apps that load fast and are easy to use. Design systems, accessibility and analytics included.</p>
+              <p class="layer-step__tags mono">React · Next.js · Flutter · Figma</p>
+            </li>
+            <li class="layer-step" data-layer="3">
+              <p class="layer-step__num mono">L4</p>
+              <h3>Product logic & APIs</h3>
+              <p>Your business rules as clean, tested code, with documented APIs that other teams can build on.</p>
+              <p class="layer-step__tags mono">Node.js · FastAPI · GraphQL · REST</p>
+            </li>
+            <li class="layer-step" data-layer="2">
+              <p class="layer-step__num mono">L3</p>
+              <h3>AI layer</h3>
+              <p>Assistants, agents and automations with guardrails, evaluations and cost limits, so answers stay grounded.</p>
+              <p class="layer-step__tags mono">LLMs · LangGraph · LlamaIndex · Evals</p>
+            </li>
+            <li class="layer-step" data-layer="1">
+              <p class="layer-step__num mono">L2</p>
+              <h3>Data</h3>
+              <p>Databases, pipelines and vector search, modeled so the product can grow without a rewrite.</p>
+              <p class="layer-step__tags mono">PostgreSQL · Redis · pgvector · ETL</p>
+            </li>
+            <li class="layer-step" data-layer="0">
+              <p class="layer-step__num mono">L1</p>
+              <h3>Infrastructure & security</h3>
+              <p>Cloud setup, CI/CD, monitoring, backups and security checks on every commit.</p>
+              <p class="layer-step__tags mono">AWS · Docker · Terraform · GitHub Actions</p>
+            </li>
+          </ol>
         </div>
       </div>
     </section>
@@ -259,276 +300,344 @@
     <!-- ============ SERVICES ============ -->
     <section class="services section" id="services" aria-labelledby="services-title">
       <div class="container">
-        <header class="section-head">
-          <p class="eyebrow" data-reveal><span>01 — Services</span></p>
-          <h2 class="section-title" id="services-title" data-split>Engineering for every stage of your growth.</h2>
-          <p class="section-lead" data-reveal>From the first prototype to enterprise-grade platforms, we bring the architecture, the craft and the AI leverage to ship what matters.</p>
-        </header>
-
-        <div class="services__grid">
-          <article class="service-card" data-tilt data-reveal>
-            <div class="service-card__spot" aria-hidden="true"></div>
-            <div class="service-card__top">
-              <div class="service-card__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2.5"/><path d="M9 2.5v3M15 2.5v3M9 18.5v3M15 18.5v3M2.5 9h3M2.5 15h3M18.5 9h3M18.5 15h3"/><path d="M12 9.2l.9 1.9 1.9.9-1.9.9-.9 1.9-.9-1.9-1.9-.9 1.9-.9z"/></svg>
-              </div>
-              <span class="service-card__num">01</span>
-            </div>
-            <h3>AI Agents &amp; Automation</h3>
-            <p>Custom LLM agents, RAG knowledge bases and automated workflows that take hours of repetitive work off your team every single week.</p>
-            <ul class="tags"><li>LLM agents</li><li>RAG</li><li>LangGraph</li><li>Workflows</li></ul>
-          </article>
-
-          <article class="service-card" data-tilt data-reveal>
-            <div class="service-card__spot" aria-hidden="true"></div>
-            <div class="service-card__top">
-              <div class="service-card__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M12 15l-3-3c1.6-4.6 4.8-8 10.5-8.5C19 9.2 15.6 12.4 12 15z"/><path d="M9 12H5.5L8 8.5h4M12 15v3.5l3.5-2.5v-4"/><path d="M6.5 16.5c-1.5.8-2 3-2 3s2.2-.5 3-2"/><circle cx="15" cy="9" r="1.3"/></svg>
-              </div>
-              <span class="service-card__num">02</span>
-            </div>
-            <h3>Rapid MVP Development</h3>
-            <p>From napkin sketch to deployed product in weeks. We validate fast, write clean code and set you up to scale from day one.</p>
-            <ul class="tags"><li>Next.js</li><li>React</li><li>Node.js</li><li>Supabase</li></ul>
-          </article>
-
-          <article class="service-card" data-tilt data-reveal>
-            <div class="service-card__spot" aria-hidden="true"></div>
-            <div class="service-card__top">
-              <div class="service-card__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M12 3l9 4.5-9 4.5-9-4.5z"/><path d="M3 12l9 4.5 9-4.5"/><path d="M3 16.5L12 21l9-4.5"/></svg>
-              </div>
-              <span class="service-card__num">03</span>
-            </div>
-            <h3>SaaS &amp; Web Platforms</h3>
-            <p>Multi-tenant SaaS, dashboards and customer portals engineered for performance, accessibility and growth.</p>
-            <ul class="tags"><li>TypeScript</li><li>PostgreSQL</li><li>APIs</li><li>Payments</li></ul>
-          </article>
-
-          <article class="service-card" data-tilt data-reveal>
-            <div class="service-card__spot" aria-hidden="true"></div>
-            <div class="service-card__top">
-              <div class="service-card__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.1 8.4-7.5 9.8-4.4-1.4-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12l2.2 2.2 4.3-4.4"/></svg>
-              </div>
-              <span class="service-card__num">04</span>
-            </div>
-            <h3>Fintech-Grade Security</h3>
-            <p>Security baked in, not bolted on: encryption, secret scanning, penetration testing and compliance-ready architecture.</p>
-            <ul class="tags"><li>DevSecOps</li><li>Pen testing</li><li>OWASP</li><li>Encryption</li></ul>
-          </article>
-
-          <article class="service-card" data-tilt data-reveal>
-            <div class="service-card__spot" aria-hidden="true"></div>
-            <div class="service-card__top">
-              <div class="service-card__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M7 18.5h10a4 4 0 0 0 .6-7.95A5.5 5.5 0 0 0 7.1 9.6 4.5 4.5 0 0 0 7 18.5z"/><path d="M12 11v5M9.8 13.2 12 11l2.2 2.2"/></svg>
-              </div>
-              <span class="service-card__num">05</span>
-            </div>
-            <h3>Cloud &amp; DevOps</h3>
-            <p>CI/CD pipelines, containerized infrastructure and observability, so you can release with confidence many times a day.</p>
-            <ul class="tags"><li>AWS</li><li>Docker</li><li>Kubernetes</li><li>Terraform</li></ul>
-          </article>
-
-          <article class="service-card" data-tilt data-reveal>
-            <div class="service-card__spot" aria-hidden="true"></div>
-            <div class="service-card__top">
-              <div class="service-card__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4"/><path d="M13.5 5l-3 14"/></svg>
-              </div>
-              <span class="service-card__num">06</span>
-            </div>
-            <h3>Legacy Modernization</h3>
-            <p>We migrate aging, untyped codebases to modern stacks with AI-assisted refactoring — safely, incrementally, without stopping your business.</p>
-            <ul class="tags"><li>Refactoring</li><li>TypeScript</li><li>Migrations</li><li>Testing</li></ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ PROCESS (horizontal) ============ -->
-    <section class="process" id="process" aria-labelledby="process-title">
-      <div class="process__pin">
-        <div class="container process__head">
+        <header class="sec-head sec-head--split">
           <div>
-            <p class="eyebrow" data-reveal><span>02 — Process</span></p>
-            <h2 class="section-title" id="process-title" data-split>From idea to impact in five moves.</h2>
+            <p class="sec-index" data-reveal><span class="mono">03</span>Services</p>
+            <h2 class="sec-title" id="services-title" data-split>Six things we do well.</h2>
           </div>
-          <div class="process__progress" aria-hidden="true"><span></span></div>
-        </div>
-        <div class="process__viewport">
-          <ol class="process__track">
-            <li class="step">
-              <span class="step__num" aria-hidden="true">01</span>
-              <div class="step__body">
-                <p class="step__kicker">Week 0</p>
-                <h3>Discover</h3>
-                <p>A 15-minute call to understand your goals. You walk away with a free technical roadmap — stack, architecture and timeline. No obligation.</p>
-                <ul><li>Goals &amp; constraints</li><li>Free technical roadmap</li></ul>
-              </div>
-            </li>
-            <li class="step">
-              <span class="step__num" aria-hidden="true">02</span>
-              <div class="step__body">
-                <p class="step__kicker">Blueprint</p>
-                <h3>Architect</h3>
-                <p>We design a secure, scalable system and a clickable prototype, so everyone agrees on what we're building before a single line of code.</p>
-                <ul><li>System design</li><li>UX prototype</li></ul>
-              </div>
-            </li>
-            <li class="step">
-              <span class="step__num" aria-hidden="true">03</span>
-              <div class="step__body">
-                <p class="step__kicker">Sprints</p>
-                <h3>Build</h3>
-                <p>Short sprints with a live demo every week. AI-accelerated development, reviewed by senior engineers and tested automatically.</p>
-                <ul><li>Weekly demos</li><li>Automated testing</li></ul>
-              </div>
-            </li>
-            <li class="step">
-              <span class="step__num" aria-hidden="true">04</span>
-              <div class="step__body">
-                <p class="step__kicker">Go live</p>
-                <h3>Launch</h3>
-                <p>CI/CD, security scans and monitoring wired in from the start. We ship to production and stay by your side through launch.</p>
-                <ul><li>Zero-drama releases</li><li>Monitoring &amp; alerts</li></ul>
-              </div>
-            </li>
-            <li class="step">
-              <span class="step__num" aria-hidden="true">05</span>
-              <div class="step__body">
-                <p class="step__kicker">Grow</p>
-                <h3>Scale</h3>
-                <p>We iterate on real user data, optimize performance and grow the product with you — or hand it over to your team, fully documented.</p>
-                <ul><li>Data-driven iteration</li><li>Clean handover</li></ul>
-              </div>
-            </li>
-          </ol>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ WHY (bento) ============ -->
-    <section class="why section" id="why" aria-labelledby="why-title">
-      <div class="container">
-        <header class="section-head">
-          <p class="eyebrow" data-reveal><span>03 — Why HAZEON</span></p>
-          <h2 class="section-title" id="why-title" data-split>Built different. Engineered to last.</h2>
+          <p class="sec-lead" data-reveal>Each one comes with experienced engineers, a demo every week and code that belongs to you.</p>
         </header>
 
-        <div class="bento">
-          <article class="bento__cell bento__cell--terminal" data-reveal>
-            <div class="bento__text">
-              <h3>Ship with confidence</h3>
-              <p>Every release passes automated tests, security scans and AI-assisted review before it reaches your users.</p>
+        <div class="svc-grid">
+          <article class="svc" data-reveal data-inview>
+            <div class="svc__fig" aria-hidden="true">
+              <svg viewBox="0 0 320 180" class="ill ill--agents">
+                <path class="i-flow" d="M160 90 L70 42 M160 90 L58 126 M160 90 L252 40 M160 90 L266 118 M160 90 L160 160"/>
+                <rect class="i-box" x="56" y="28" width="28" height="28" rx="6"/><path class="i-soft" d="M63 38h14M63 44h10"/>
+                <rect class="i-box" x="44" y="112" width="28" height="28" rx="6"/><path class="i-soft" d="M51 126h14M58 119v14"/>
+                <rect class="i-box" x="238" y="26" width="28" height="28" rx="6"/><circle class="i-soft" cx="252" cy="40" r="6"/>
+                <rect class="i-box" x="252" y="104" width="28" height="28" rx="6"/><path class="i-soft" d="M259 122l5-8 5 5 5-7"/>
+                <rect class="i-box" x="146" y="146" width="28" height="28" rx="6"/><path class="i-soft" d="M153 156h14v10h-14z"/>
+                <circle class="i-ring" cx="160" cy="90" r="24"/>
+                <circle class="i-core" cx="160" cy="90" r="24"/>
+                <circle class="i-accent" cx="160" cy="90" r="7"/>
+              </svg>
             </div>
-            <div class="terminal" aria-label="Example deployment pipeline output" role="img">
-              <div class="terminal__bar"><i></i><i></i><i></i><span>hazeon — deploy</span></div>
-              <pre class="terminal__body" id="terminal"><code></code></pre>
-            </div>
-          </article>
-
-          <article class="bento__cell bento__cell--sphere" data-reveal>
-            <div class="bento__text">
-              <h3>Modern stack, zero lock-in</h3>
-              <p>Battle-tested, open technologies. Drag the sphere.</p>
-            </div>
-            <div class="sphere" id="tag-sphere" aria-label="Technologies we use" role="list">
-              <span role="listitem">Python</span><span role="listitem">TypeScript</span><span role="listitem">React</span><span role="listitem">Next.js</span>
-              <span role="listitem">Node.js</span><span role="listitem">FastAPI</span><span role="listitem">Rust</span><span role="listitem">Go</span>
-              <span role="listitem">PostgreSQL</span><span role="listitem">Supabase</span><span role="listitem">Redis</span><span role="listitem">Docker</span>
-              <span role="listitem">Kubernetes</span><span role="listitem">AWS</span><span role="listitem">Azure</span><span role="listitem">Terraform</span>
-              <span role="listitem">LangGraph</span><span role="listitem">LlamaIndex</span><span role="listitem">OpenAI</span><span role="listitem">Claude</span>
-              <span role="listitem">PyTorch</span><span role="listitem">OpenCV</span><span role="listitem">Whisper</span><span role="listitem">Pinecone</span>
-              <span role="listitem">Flutter</span><span role="listitem">Tailwind</span><span role="listitem">GraphQL</span><span role="listitem">GitHub Actions</span>
+            <div class="svc__body">
+              <p class="svc__num mono">03.1</p>
+              <h3>AI assistants & automation</h3>
+              <p>Assistants that answer from your own documents, agents that take repetitive back-office work off your team, and the evaluations that prove they work.</p>
+              <p class="svc__get mono">You get</p>
+              <ul class="svc__list"><li>Document assistant (RAG)</li><li>Workflow agents</li><li>Evaluation and monitoring</li></ul>
             </div>
           </article>
 
-          <article class="bento__cell" data-reveal>
-            <div class="bento__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/><path d="M12 7.5l1.4 3.1 3.1 1.4-3.1 1.4L12 16.5l-1.4-3.1L7.5 12l3.1-1.4z"/></svg>
+          <article class="svc" data-reveal data-inview>
+            <div class="svc__fig" aria-hidden="true">
+              <svg viewBox="0 0 320 180" class="ill ill--mvp ill--flip">
+                <rect class="i-dash" x="34" y="38" width="64" height="104" rx="6"/>
+                <path class="i-soft" d="M44 56h40M44 66h28M44 100l10-8 8 6 12-12M44 120h44"/>
+                <path class="i-line i-arrowline" d="M110 90h40M142 82l8 8-8 8"/>
+                <rect class="i-line" x="166" y="12" width="96" height="156" rx="14"/>
+                <path class="i-line" d="M200 22h28"/>
+                <rect class="i-build b1" x="178" y="34" width="72" height="10" rx="3"/>
+                <rect class="i-build i-fillsoft b2" x="178" y="52" width="72" height="44" rx="4"/>
+                <rect class="i-build b3" x="178" y="104" width="62" height="6" rx="3"/>
+                <rect class="i-build b4" x="178" y="116" width="48" height="6" rx="3"/>
+                <rect class="i-build b5" x="178" y="128" width="56" height="6" rx="3"/>
+                <rect class="i-build i-accentfill b6" x="178" y="144" width="72" height="14" rx="4"/>
+              </svg>
             </div>
-            <h3>AI-first, human-led</h3>
-            <p>AI accelerates the heavy lifting. Senior engineers own every decision and review every line.</p>
+            <div class="svc__body">
+              <p class="svc__num mono">03.2</p>
+              <h3>MVPs for founders</h3>
+              <p>From an idea to a product people can sign up for. Tight scope, clean code, and a codebase that can grow with you.</p>
+              <p class="svc__get mono">You get</p>
+              <ul class="svc__list"><li>Clickable prototype</li><li>Production app</li><li>Launch checklist</li></ul>
+            </div>
           </article>
 
-          <article class="bento__cell bento__cell--shield" data-reveal>
-            <div class="shield" aria-hidden="true">
-              <span class="shield__ring"></span><span class="shield__ring"></span><span class="shield__ring"></span>
-              <svg viewBox="0 0 24 24"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.1 8.4-7.5 9.8-4.4-1.4-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12l2.2 2.2 4.3-4.4"/></svg>
+          <article class="svc" data-reveal data-inview>
+            <div class="svc__fig" aria-hidden="true">
+              <svg viewBox="0 0 320 180" class="ill ill--saas">
+                <rect class="i-line" x="20" y="14" width="280" height="152" rx="8"/>
+                <path class="i-line" d="M70 14v152"/>
+                <path class="i-soft" d="M32 34h26M32 48h20M32 62h24M32 76h18"/>
+                <rect class="i-box" x="84" y="28" width="62" height="30" rx="4"/>
+                <rect class="i-box" x="154" y="28" width="62" height="30" rx="4"/>
+                <rect class="i-box" x="224" y="28" width="62" height="30" rx="4"/>
+                <path class="i-soft" d="M92 38h24M162 38h30M232 38h20"/>
+                <path class="i-hiline" d="M92 50h34"/>
+                <g class="i-bars">
+                  <rect x="88" y="104" width="14" height="48" rx="2"/>
+                  <rect x="108" y="88" width="14" height="64" rx="2"/>
+                  <rect x="128" y="116" width="14" height="36" rx="2"/>
+                  <rect x="148" y="80" width="14" height="72" rx="2"/>
+                  <rect x="168" y="96" width="14" height="56" rx="2"/>
+                </g>
+                <path class="i-chart" pathLength="1" d="M202 140 L222 122 L240 128 L258 98 L284 84"/>
+                <circle class="i-accent" cx="284" cy="84" r="4"/>
+              </svg>
             </div>
-            <h3>Secure by default</h3>
-            <p>Encryption, least-privilege access and secret scanning from the very first commit.</p>
+            <div class="svc__body">
+              <p class="svc__num mono">03.3</p>
+              <h3>SaaS & web platforms</h3>
+              <p>Multi-tenant platforms, dashboards and customer portals. Billing, roles, permissions and audit logs: the unglamorous parts, done properly.</p>
+              <p class="svc__get mono">You get</p>
+              <ul class="svc__list"><li>Admin and customer portals</li><li>Billing and subscriptions</li><li>Roles and audit logs</li></ul>
+            </div>
           </article>
 
-          <article class="bento__cell" data-reveal>
-            <div class="bento__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="M10.8 12.2L20 3M16 7l3 3M14 9l2 2"/></svg>
+          <article class="svc" data-reveal data-inview>
+            <div class="svc__fig" aria-hidden="true">
+              <svg viewBox="0 0 320 180" class="ill ill--security">
+                <defs><clipPath id="shield-clip"><path d="M160 14 L224 38 V92 C224 130 196 156 160 168 C124 156 96 130 96 92 V38 Z"/></clipPath></defs>
+                <path class="i-line" d="M160 14 L224 38 V92 C224 130 196 156 160 168 C124 156 96 130 96 92 V38 Z"/>
+                <g clip-path="url(#shield-clip)">
+                  <path class="i-soft" d="M116 52h56M116 66h80M116 80h40M116 94h70M116 108h52M116 122h64M130 136h40"/>
+                  <path class="i-flag" d="M116 94h70"/>
+                  <rect class="i-scan" x="96" y="20" width="128" height="3"/>
+                </g>
+                <path class="i-check" pathLength="1" d="M142 92 L156 106 L182 78"/>
+                <rect class="i-box" x="34" y="66" width="38" height="48" rx="5"/><path class="i-line" d="M42 66v-10a11 11 0 0 1 22 0v10"/><circle class="i-accent" cx="53" cy="88" r="4"/>
+                <path class="i-soft" d="M248 60h40M248 76h28M248 92h36M248 108h22"/>
+              </svg>
             </div>
-            <h3>You own everything</h3>
-            <p>Code, IP, infrastructure and documentation. Yours from day one — no lock-in, ever.</p>
+            <div class="svc__body">
+              <p class="svc__num mono">03.4</p>
+              <h3>Security & DevSecOps</h3>
+              <p>Threat modeling, secret scanning, dependency audits and penetration tests. Security is part of the build, not a checkbox at the end.</p>
+              <p class="svc__get mono">You get</p>
+              <ul class="svc__list"><li>Security review</li><li>Penetration test report</li><li>Security gates in CI</li></ul>
+            </div>
           </article>
 
-          <article class="bento__cell" data-reveal>
-            <div class="bento__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/></svg>
+          <article class="svc" data-reveal data-inview>
+            <div class="svc__fig" aria-hidden="true">
+              <svg viewBox="0 0 320 180" class="ill ill--pipeline ill--flip">
+                <path class="i-line" d="M40 96h240"/>
+                <g class="stage s1"><circle class="i-stage" cx="54" cy="96" r="16"/><circle class="i-soft" cx="54" cy="96" r="4"/></g>
+                <g class="stage s2"><circle class="i-stage" cx="125" cy="96" r="16"/><rect class="i-soft" x="119" y="90" width="12" height="12" rx="2"/></g>
+                <g class="stage s3"><circle class="i-stage" cx="196" cy="96" r="16"/><path class="i-soft" d="M189 96l5 5 9-10"/></g>
+                <g class="stage s4"><circle class="i-stage" cx="267" cy="96" r="16"/><path class="i-soft" d="M267 103V89M261 95l6-6 6 6"/></g>
+                <rect class="i-packet" x="48" y="60" width="12" height="12" rx="3"/>
+                <path class="i-soft" d="M236 44c0-12 10-20 22-20 10 0 18 6 21 14 9 1 15 8 15 16 0 9-7 16-16 16h-38c-9 0-16-6-16-14s6-13 12-12z"/>
+                <path class="i-dash" d="M54 128v20h213v-20"/>
+              </svg>
             </div>
-            <h3>Radical transparency</h3>
-            <p>Weekly demos, shared boards and direct access to the engineers building your product.</p>
+            <div class="svc__body">
+              <p class="svc__num mono">03.5</p>
+              <h3>Cloud & DevOps</h3>
+              <p>Infrastructure as code, CI/CD pipelines, containers and monitoring. Releasing on a Friday should be boring.</p>
+              <p class="svc__get mono">You get</p>
+              <ul class="svc__list"><li>Infrastructure as code</li><li>CI/CD pipelines</li><li>Dashboards and alerts</li></ul>
+            </div>
+          </article>
+
+          <article class="svc" data-reveal data-inview>
+            <div class="svc__fig" aria-hidden="true">
+              <svg viewBox="0 0 320 180" class="ill ill--legacy ill--flip">
+                <rect class="i-line" x="30" y="36" width="104" height="108" rx="6"/>
+                <path class="i-soft i-spaghetti" d="M44 56c20 0 10 18 30 18s0-20 22-20 8 26 26 26M44 98c16-8 22 14 38 6s12-18 28-10 6 20 14 20M48 126c14 6 24-10 40-2s26 2 30-6"/>
+                <path class="i-line i-arrowline" d="M148 90h26M166 82l8 8-8 8"/>
+                <rect class="i-mod m1" x="188" y="36" width="44" height="30" rx="4"/>
+                <rect class="i-mod m2" x="242" y="36" width="44" height="30" rx="4"/>
+                <rect class="i-mod m3" x="188" y="75" width="44" height="30" rx="4"/>
+                <rect class="i-mod m4" x="242" y="75" width="44" height="30" rx="4"/>
+                <rect class="i-mod m5" x="188" y="114" width="44" height="30" rx="4"/>
+                <rect class="i-mod i-mod--accent m6" x="242" y="114" width="44" height="30" rx="4"/>
+              </svg>
+            </div>
+            <div class="svc__body">
+              <p class="svc__num mono">03.6</p>
+              <h3>Legacy modernization</h3>
+              <p>We move old, fragile codebases to modern stacks one piece at a time, tests first, without stopping the business.</p>
+              <p class="svc__get mono">You get</p>
+              <ul class="svc__list"><li>Codebase audit</li><li>Migration plan</li><li>Step-by-step rewrite</li></ul>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- ============ ENGAGEMENT MODELS ============ -->
+    <!-- ============ ASSISTANT (RAG infographic) ============ -->
+    <section class="assistant section" id="assistant" aria-labelledby="assistant-title">
+      <div class="container">
+        <header class="sec-head">
+          <p class="sec-index" data-reveal><span class="mono">04</span>Inside a build</p>
+          <h2 class="sec-title" id="assistant-title" data-split>How an AI assistant answers from your documents.</h2>
+          <p class="sec-lead" data-reveal>It's the system we get asked for most. Here is what happens between a question and an answer you can trust.</p>
+        </header>
+
+        <div class="assistant__body" data-assistant>
+          <ol class="flow">
+            <li class="flow__node"><span class="flow__num mono">01</span><div><h3>Ingest</h3><p>PDFs, Notion, Drive, tickets or your own database.</p></div></li>
+            <li class="flow__node"><span class="flow__num mono">02</span><div><h3>Split & embed</h3><p>Documents become passages, passages become vectors.</p></div></li>
+            <li class="flow__node"><span class="flow__num mono">03</span><div><h3>Index</h3><p>Stored in a vector database, with the same access rules as the source.</p></div></li>
+            <li class="flow__node"><span class="flow__num mono">04</span><div><h3>Retrieve</h3><p>The passages closest to the question are pulled back.</p></div></li>
+            <li class="flow__node"><span class="flow__num mono">05</span><div><h3>Generate</h3><p>The model writes an answer using only those passages.</p></div></li>
+            <li class="flow__node"><span class="flow__num mono">06</span><div><h3>Check & cite</h3><p>Guardrails check the answer and attach its sources.</p></div></li>
+          </ol>
+
+          <figure class="chat" data-reveal>
+            <div class="chat__bar"><span class="chat__dot"></span><span class="mono">Example conversation</span></div>
+            <div class="chat__body">
+              <div class="msg msg--you">
+                <p class="msg__who mono">You</p>
+                <p class="msg__text">Can customers on an annual plan get a refund?</p>
+              </div>
+              <p class="chat__status mono"><span class="chat__spinner" aria-hidden="true"></span>Searching 2,431 passages…</p>
+              <div class="msg msg--bot">
+                <p class="msg__who mono">Assistant</p>
+                <p class="msg__text" data-type>Yes, within 30 days of purchase. After that, the unused months are refunded pro rata.</p>
+                <div class="msg__sources">
+                  <p class="mono">Sources</p>
+                  <ul><li><span class="mono">[1]</span>billing-policy.pdf, p. 4</li><li><span class="mono">[2]</span>support-handbook.md</li></ul>
+                </div>
+              </div>
+            </div>
+            <figcaption class="chat__note mono">Illustrative example with made-up documents.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROCESS (Gantt) ============ -->
+    <section class="process" id="process" aria-labelledby="process-title">
+      <div class="process__sticky">
+        <div class="container">
+          <header class="sec-head sec-head--split">
+            <div>
+              <p class="sec-index" data-reveal><span class="mono">05</span>Process</p>
+              <h2 class="sec-title" id="process-title" data-split>A typical MVP, week by week.</h2>
+            </div>
+            <p class="sec-lead" data-reveal>Your timeline depends on scope. After the first call, you get a real one, in writing.</p>
+          </header>
+
+          <div class="gantt" data-gantt>
+            <div class="gantt__head" aria-hidden="true">
+              <span class="gantt__label mono">Weeks</span>
+              <ol class="gantt__weeks mono"><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>After</li></ol>
+            </div>
+            <ol class="gantt__rows">
+              <li class="gantt__row" data-start="0" data-end="1">
+                <span class="gantt__name">Discovery</span>
+                <span class="gantt__track" aria-hidden="true"><span class="gantt__bar"><span class="gantt__fill"></span></span><i class="gantt__mark gantt__mark--start"></i></span>
+              </li>
+              <li class="gantt__row" data-start="0.5" data-end="2">
+                <span class="gantt__name">Design & architecture</span>
+                <span class="gantt__track" aria-hidden="true"><span class="gantt__bar"><span class="gantt__fill"></span></span></span>
+              </li>
+              <li class="gantt__row" data-start="2" data-end="7">
+                <span class="gantt__name">Build sprints</span>
+                <span class="gantt__track" aria-hidden="true"><span class="gantt__bar"><span class="gantt__fill"></span></span><i class="gantt__demo d1"></i><i class="gantt__demo d2"></i><i class="gantt__demo d3"></i><i class="gantt__demo d4"></i><i class="gantt__demo d5"></i></span>
+              </li>
+              <li class="gantt__row" data-start="4" data-end="8">
+                <span class="gantt__name">Testing & security</span>
+                <span class="gantt__track" aria-hidden="true"><span class="gantt__bar gantt__bar--dashed"><span class="gantt__fill"></span></span></span>
+              </li>
+              <li class="gantt__row" data-start="7.5" data-end="8">
+                <span class="gantt__name">Launch</span>
+                <span class="gantt__track" aria-hidden="true"><span class="gantt__bar gantt__bar--accent"><span class="gantt__fill"></span></span><i class="gantt__mark gantt__mark--launch"></i></span>
+              </li>
+              <li class="gantt__row" data-start="8" data-end="9">
+                <span class="gantt__name">Support & growth</span>
+                <span class="gantt__track" aria-hidden="true"><span class="gantt__bar gantt__bar--open"><span class="gantt__fill"></span></span></span>
+              </li>
+            </ol>
+            <div class="gantt__now" aria-hidden="true"><span class="mono">You are here</span></div>
+            <div class="gantt__legend mono" aria-hidden="true"><span><i class="gantt__demo"></i>Live demo</span><span><i class="gantt__mark"></i>Milestone</span></div>
+          </div>
+
+          <ol class="phases">
+            <li class="phase"><p class="phase__when mono">Week 1</p><h3>Discovery</h3><p>A 15-minute call, then a workshop on goals, users and constraints. You get a written roadmap.</p></li>
+            <li class="phase"><p class="phase__when mono">Weeks 1 to 2</p><h3>Design & architecture</h3><p>A clickable prototype and the system design, agreed on before any production code is written.</p></li>
+            <li class="phase"><p class="phase__when mono">Weeks 3 to 7</p><h3>Build sprints</h3><p>One-week sprints. At the end of each one, you see a live demo of working software.</p></li>
+            <li class="phase"><p class="phase__when mono">Weeks 5 to 8</p><h3>Testing & security</h3><p>Automated tests run on every change, and a security review closes the build.</p></li>
+            <li class="phase"><p class="phase__when mono">Week 8</p><h3>Launch</h3><p>Production release with monitoring in place, and us on call for the first days.</p></li>
+            <li class="phase"><p class="phase__when mono">After launch</p><h3>Support & growth</h3><p>We keep improving the product with you, or hand it over with full documentation.</p></li>
+          </ol>
+          <p class="process__figure mono">Fig. 03. An illustrative eight-week plan.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STACK ============ -->
+    <section class="stack-sec section" id="stack" aria-labelledby="stack-title">
+      <div class="container stack-sec__grid">
+        <div>
+          <header class="sec-head">
+            <p class="sec-index" data-reveal><span class="mono">06</span>Stack</p>
+            <h2 class="sec-title" id="stack-title" data-split>Proven tools, chosen per project.</h2>
+            <p class="sec-lead" data-reveal>We pick what your team can maintain after we leave, not what's trending this month.</p>
+          </header>
+          <dl class="tools" data-reveal>
+            <div><dt class="mono">Frontend</dt><dd>React, Next.js, TypeScript, Flutter, Tailwind</dd></div>
+            <div><dt class="mono">Backend</dt><dd>Node.js, Python, FastAPI, Go, Rust, GraphQL</dd></div>
+            <div><dt class="mono">AI & ML</dt><dd>OpenAI, Claude, LangGraph, LlamaIndex, PyTorch, OpenCV, Whisper</dd></div>
+            <div><dt class="mono">Data</dt><dd>PostgreSQL, Supabase, Redis, pgvector, Pinecone</dd></div>
+            <div><dt class="mono">Cloud & ops</dt><dd>AWS, Azure, Docker, Kubernetes, Terraform, GitHub Actions</dd></div>
+          </dl>
+        </div>
+        <div class="sphere-wrap" data-reveal>
+          <div class="sphere" id="tag-sphere" aria-hidden="true">
+            <span>Python</span><span>TypeScript</span><span>React</span><span>Next.js</span><span>Node.js</span><span>FastAPI</span><span>Rust</span><span>Go</span>
+            <span>PostgreSQL</span><span>Supabase</span><span>Redis</span><span>Docker</span><span>Kubernetes</span><span>AWS</span><span>Azure</span><span>Terraform</span>
+            <span>LangGraph</span><span>LlamaIndex</span><span>OpenAI</span><span>Claude</span><span>PyTorch</span><span>OpenCV</span><span>Whisper</span><span>pgvector</span>
+            <span>Flutter</span><span>Tailwind</span><span>GraphQL</span><span>GitHub Actions</span>
+          </div>
+          <p class="sphere-wrap__hint mono">Drag the sphere</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ENGAGEMENT ============ -->
     <section class="engage section" id="engage" aria-labelledby="engage-title">
       <div class="container">
-        <header class="section-head section-head--center">
-          <p class="eyebrow" data-reveal><span>04 — Work with us</span></p>
-          <h2 class="section-title" id="engage-title" data-split>Pick the engagement that fits.</h2>
-          <p class="section-lead" data-reveal>Every engagement starts with a free 15-minute call and a technical roadmap. Then you choose how we move forward.</p>
+        <header class="sec-head sec-head--split">
+          <div>
+            <p class="sec-index" data-reveal><span class="mono">07</span>Working together</p>
+            <h2 class="sec-title" id="engage-title" data-split>Three ways to work with us.</h2>
+          </div>
+          <p class="sec-lead" data-reveal>Every project starts with a free 15-minute call and a written plan. Then you choose.</p>
         </header>
 
         <div class="plans">
-          <article class="plan" data-tilt data-reveal>
-            <p class="plan__for">For founders with an idea</p>
-            <h3>MVP Sprint</h3>
-            <p class="plan__desc">Validate your idea with a real, launch-ready product — fast.</p>
-            <ul class="plan__list">
-              <li>Fixed scope &amp; clear timeline</li>
-              <li>Product design + development</li>
-              <li>Launch-ready in weeks</li>
-              <li>Full code &amp; IP ownership</li>
-            </ul>
-            <a href="#contact" class="btn btn--ghost btn--block" data-subject="MVP Sprint"><span>Plan my MVP</span><svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <article class="plan" data-reveal>
+            <p class="plan__num mono">A</p>
+            <h3>MVP sprint</h3>
+            <dl>
+              <div><dt class="mono">Best for</dt><dd>Founders validating an idea</dd></div>
+              <div><dt class="mono">Duration</dt><dd>Usually 6 to 10 weeks</dd></div>
+              <div><dt class="mono">How it works</dt><dd>Fixed scope, a live demo every week</dd></div>
+              <div><dt class="mono">You get</dt><dd>A launched product and all of its code</dd></div>
+              <div><dt class="mono">Pricing</dt><dd>Fixed price</dd></div>
+            </dl>
+            <a href="#contact" class="btn btn--primary btn--block" data-subject="MVP sprint" data-need="mvp"><span>Plan my MVP</span><svg class="btn__arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
           </article>
-
-          <article class="plan plan--featured" data-tilt data-reveal>
-            <p class="plan__badge">Best for scaling teams</p>
-            <p class="plan__for">For teams that need to move faster</p>
-            <h3>Dedicated Squad</h3>
-            <p class="plan__desc">Senior engineers embedded in your workflow, powered by our AI-first toolchain.</p>
-            <ul class="plan__list">
-              <li>Embedded in your tools &amp; rituals</li>
-              <li>Flexible monthly engagement</li>
-              <li>Scale up or down anytime</li>
-              <li>AI-accelerated delivery</li>
-            </ul>
-            <a href="#contact" class="btn btn--primary btn--block" data-subject="Dedicated Squad"><span>Build my team</span><svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <article class="plan" data-reveal>
+            <p class="plan__num mono">B</p>
+            <h3>Dedicated team</h3>
+            <dl>
+              <div><dt class="mono">Best for</dt><dd>Teams that need more experienced hands</dd></div>
+              <div><dt class="mono">Duration</dt><dd>Month to month</dd></div>
+              <div><dt class="mono">How it works</dt><dd>Our engineers join your tools and rituals</dd></div>
+              <div><dt class="mono">You get</dt><dd>More delivery capacity, without hiring</dd></div>
+              <div><dt class="mono">Pricing</dt><dd>Monthly</dd></div>
+            </dl>
+            <a href="#contact" class="btn btn--ghost btn--block" data-subject="Dedicated team" data-need="saas"><span>Talk about a team</span><svg class="btn__arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
           </article>
-
-          <article class="plan" data-tilt data-reveal>
-            <p class="plan__for">For businesses buried in manual work</p>
-            <h3>AI Automation Audit</h3>
-            <p class="plan__desc">Find the bottlenecks worth automating — and prove it with a working prototype.</p>
-            <ul class="plan__list">
-              <li>Map workflows &amp; bottlenecks</li>
-              <li>Rank high-ROI automations</li>
-              <li>Prototype the first AI agent</li>
-              <li>Clear implementation plan</li>
-            </ul>
-            <a href="#contact" class="btn btn--ghost btn--block" data-subject="AI Automation Audit"><span>Audit my workflows</span><svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <article class="plan" data-reveal>
+            <p class="plan__num mono">C</p>
+            <h3>Automation audit</h3>
+            <dl>
+              <div><dt class="mono">Best for</dt><dd>Companies buried in manual work</dd></div>
+              <div><dt class="mono">Duration</dt><dd>About 2 weeks</dd></div>
+              <div><dt class="mono">How it works</dt><dd>Interviews, process mapping, one prototype</dd></div>
+              <div><dt class="mono">You get</dt><dd>A ranked list of automations and a working first agent</dd></div>
+              <div><dt class="mono">Pricing</dt><dd>Fixed price</dd></div>
+            </dl>
+            <a href="#contact" class="btn btn--ghost btn--block" data-subject="Automation audit" data-need="ai"><span>Book an audit</span><svg class="btn__arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
           </article>
         </div>
       </div>
@@ -537,129 +646,107 @@
     <!-- ============ CAREERS ============ -->
     <section class="careers section" id="careers" aria-labelledby="careers-title">
       <div class="container">
-        <div class="careers__intro">
+        <header class="sec-head sec-head--split">
           <div>
-            <p class="eyebrow" data-reveal><span>05 — Careers</span></p>
-            <h2 class="section-title" id="careers-title" data-split>Build the future with us.</h2>
+            <p class="sec-index" data-reveal><span class="mono">08</span>Careers</p>
+            <h2 class="sec-title" id="careers-title" data-split>Do your final-year project with us.</h2>
           </div>
-          <div class="careers__copy">
-            <p class="section-lead" data-reveal>We're assembling a crew of curious, ambitious engineers who want to ship real AI products — not toy projects. If hard problems excite you, you'll fit right in.</p>
+          <div>
+            <p class="sec-lead" data-reveal>Five end-of-studies internships (PFE), each one on a real product. An experienced engineer reviews your work every day, and the goal is to ship it.</p>
             <ul class="perks" data-reveal>
-              <li><span aria-hidden="true">✦</span>Real products, real users</li>
-              <li><span aria-hidden="true">✦</span>Mentorship from senior architects</li>
-              <li><span aria-hidden="true">✦</span>Modern AI stack: LLMs, RAG, agents</li>
-              <li><span aria-hidden="true">✦</span>Ownership from week one</li>
+              <li>Real products, real users</li><li>Daily code review</li><li>Modern AI stack: LLMs, RAG, agents</li><li>Your own scope from week one</li>
             </ul>
           </div>
-        </div>
+        </header>
 
         <div class="roles-head" data-reveal>
           <h3>Open positions</h3>
-          <span class="roles-head__count">5 end-of-studies internships (PFE)</span>
+          <p class="mono">5 internships (PFE)</p>
         </div>
 
         <div class="roles" data-accordion>
           <article class="role" data-reveal>
             <h4 class="role__heading">
               <button class="role__head" type="button" aria-expanded="false" aria-controls="role-1">
-                <span class="role__index">01</span>
-                <span class="role__title">AI Engineer — RAG &amp; LLMs</span>
-                <span class="role__meta">PFE Internship</span>
-                <span class="role__toggle" aria-hidden="true"></span>
+                <span class="role__index mono">01</span><span class="role__title">AI Engineer, RAG & LLMs</span><span class="role__meta mono">PFE internship</span><span class="role__toggle" aria-hidden="true"></span>
               </button>
             </h4>
             <div class="role__panel" id="role-1" role="region">
               <div class="role__inner">
                 <div class="role__body">
                   <p class="role__project">Project: <strong>DocuMind</strong></p>
-                  <p>Build an enterprise RAG assistant: upload company documents and chat with them — with answers that always cite their sources. You'll own chunking strategy, retrieval quality and guardrails against out-of-scope answers.</p>
-                  <ul class="tags"><li>Python</li><li>FastAPI</li><li>LlamaIndex</li><li>Next.js</li><li>Vector DB</li></ul>
+                  <p>Build an enterprise assistant that lets people chat with company documents, with answers that always cite their sources. You'll own the chunking strategy, retrieval quality and the guardrails against off-topic answers.</p>
+                  <p class="role__tags mono">Python · FastAPI · LlamaIndex · Next.js · Vector DB</p>
                 </div>
-                <a class="btn btn--primary role__apply" href="mailto:hello@hazeon.dev?subject=Application%20%E2%80%94%20AI%20Engineer%20(RAG%20%26%20LLMs)" data-apply="AI Engineer — RAG & LLMs"><span>Apply now</span><svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+                <a class="btn btn--primary role__apply" href="mailto:hello@hazeon.dev?subject=Application%3A%20AI%20Engineer%2C%20RAG%20%26%20LLMs"><span>Apply</span><svg class="btn__arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
               </div>
             </div>
           </article>
-
           <article class="role" data-reveal>
             <h4 class="role__heading">
               <button class="role__head" type="button" aria-expanded="false" aria-controls="role-2">
-                <span class="role__index">02</span>
-                <span class="role__title">Generative AI Software Engineer</span>
-                <span class="role__meta">PFE Internship</span>
-                <span class="role__toggle" aria-hidden="true"></span>
+                <span class="role__index mono">02</span><span class="role__title">Generative AI Software Engineer</span><span class="role__meta mono">PFE internship</span><span class="role__toggle" aria-hidden="true"></span>
               </button>
             </h4>
             <div class="role__panel" id="role-2" role="region">
               <div class="role__inner">
                 <div class="role__body">
                   <p class="role__project">Project: <strong>RefactorBot</strong></p>
-                  <p>Build an AI agent that behaves like a senior engineer: it reads legacy Python, plans the refactor, generates modern TypeScript and validates the result before a human ever sees it.</p>
-                  <ul class="tags"><li>Python</li><li>LangGraph</li><li>React</li><li>Monaco</li><li>LLMs</li></ul>
+                  <p>Build an agent that refactors like a senior engineer: it reads legacy Python, plans the change, writes modern TypeScript and checks its own work before a human reviews it.</p>
+                  <p class="role__tags mono">Python · LangGraph · React · Monaco · LLMs</p>
                 </div>
-                <a class="btn btn--primary role__apply" href="mailto:hello@hazeon.dev?subject=Application%20%E2%80%94%20Generative%20AI%20Software%20Engineer" data-apply="Generative AI Software Engineer"><span>Apply now</span><svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+                <a class="btn btn--primary role__apply" href="mailto:hello@hazeon.dev?subject=Application%3A%20Generative%20AI%20Software%20Engineer"><span>Apply</span><svg class="btn__arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
               </div>
             </div>
           </article>
-
           <article class="role" data-reveal>
             <h4 class="role__heading">
               <button class="role__head" type="button" aria-expanded="false" aria-controls="role-3">
-                <span class="role__index">03</span>
-                <span class="role__title">Full Stack AI Developer (SaaS)</span>
-                <span class="role__meta">PFE Internship</span>
-                <span class="role__toggle" aria-hidden="true"></span>
+                <span class="role__index mono">03</span><span class="role__title">Full-Stack AI Developer (SaaS)</span><span class="role__meta mono">PFE internship</span><span class="role__toggle" aria-hidden="true"></span>
               </button>
             </h4>
             <div class="role__panel" id="role-3" role="region">
               <div class="role__inner">
                 <div class="role__body">
-                  <p class="role__project">Project: <strong>TubeMind — Idea Factory</strong></p>
-                  <p>Build an AI producer for creators: from a single niche, generate data-backed video plans by orchestrating trend research, LLM analysis and visual prototyping in one seamless SaaS workflow.</p>
-                  <ul class="tags"><li>Next.js</li><li>TypeScript</li><li>Supabase</li><li>Tailwind</li><li>AI SDK</li></ul>
+                  <p class="role__project">Project: <strong>TubeMind</strong></p>
+                  <p>Build an AI producer for video creators: from one niche, it researches trends, analyzes them with LLMs and drafts data-backed video plans, all in one SaaS workflow.</p>
+                  <p class="role__tags mono">Next.js · TypeScript · Supabase · Tailwind · AI SDK</p>
                 </div>
-                <a class="btn btn--primary role__apply" href="mailto:hello@hazeon.dev?subject=Application%20%E2%80%94%20Full%20Stack%20AI%20Developer%20(SaaS)" data-apply="Full Stack AI Developer (SaaS)"><span>Apply now</span><svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+                <a class="btn btn--primary role__apply" href="mailto:hello@hazeon.dev?subject=Application%3A%20Full-Stack%20AI%20Developer%20(SaaS)"><span>Apply</span><svg class="btn__arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
               </div>
             </div>
           </article>
-
           <article class="role" data-reveal>
             <h4 class="role__heading">
               <button class="role__head" type="button" aria-expanded="false" aria-controls="role-4">
-                <span class="role__index">04</span>
-                <span class="role__title">AI Computer Vision Engineer</span>
-                <span class="role__meta">PFE Internship</span>
-                <span class="role__toggle" aria-hidden="true"></span>
+                <span class="role__index mono">04</span><span class="role__title">Computer Vision Engineer</span><span class="role__meta mono">PFE internship</span><span class="role__toggle" aria-hidden="true"></span>
               </button>
             </h4>
             <div class="role__panel" id="role-4" role="region">
               <div class="role__inner">
                 <div class="role__body">
                   <p class="role__project">Project: <strong>HireStream</strong></p>
-                  <p>Build an augmented-intelligence screener that pre-processes video interviews — speech clarity, keywords and sentiment — to help recruiters focus on the right candidates first.</p>
-                  <ul class="tags"><li>Python</li><li>Whisper</li><li>MediaPipe</li><li>OpenCV</li><li>React</li></ul>
+                  <p>Build a screening assistant for recruiters that pre-processes video interviews (speech clarity, keywords, sentiment) so they can focus on the right candidates first.</p>
+                  <p class="role__tags mono">Python · Whisper · MediaPipe · OpenCV · React</p>
                 </div>
-                <a class="btn btn--primary role__apply" href="mailto:hello@hazeon.dev?subject=Application%20%E2%80%94%20AI%20Computer%20Vision%20Engineer" data-apply="AI Computer Vision Engineer"><span>Apply now</span><svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+                <a class="btn btn--primary role__apply" href="mailto:hello@hazeon.dev?subject=Application%3A%20Computer%20Vision%20Engineer"><span>Apply</span><svg class="btn__arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
               </div>
             </div>
           </article>
-
           <article class="role" data-reveal>
             <h4 class="role__heading">
               <button class="role__head" type="button" aria-expanded="false" aria-controls="role-5">
-                <span class="role__index">05</span>
-                <span class="role__title">DevSecOps Engineer</span>
-                <span class="role__meta">PFE Internship</span>
-                <span class="role__toggle" aria-hidden="true"></span>
+                <span class="role__index mono">05</span><span class="role__title">DevSecOps Engineer</span><span class="role__meta mono">PFE internship</span><span class="role__toggle" aria-hidden="true"></span>
               </button>
             </h4>
             <div class="role__panel" id="role-5" role="region">
               <div class="role__inner">
                 <div class="role__body">
                   <p class="role__project">Project: <strong>Sentinel</strong></p>
-                  <p>Build the brain of an automated code reviewer: a hybrid engine that catches leaked secrets with deterministic rules and spots code smells with LLMs — before a pull request is merged.</p>
-                  <ul class="tags"><li>Rust / Node.js</li><li>PostgreSQL</li><li>LLMs</li><li>CI/CD</li></ul>
+                  <p>Build the engine of an automated code reviewer: deterministic rules catch leaked secrets, LLMs flag code smells, all before a pull request is merged.</p>
+                  <p class="role__tags mono">Rust · Node.js · PostgreSQL · LLMs · CI/CD</p>
                 </div>
-                <a class="btn btn--primary role__apply" href="mailto:hello@hazeon.dev?subject=Application%20%E2%80%94%20DevSecOps%20Engineer" data-apply="DevSecOps Engineer"><span>Apply now</span><svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+                <a class="btn btn--primary role__apply" href="mailto:hello@hazeon.dev?subject=Application%3A%20DevSecOps%20Engineer"><span>Apply</span><svg class="btn__arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
               </div>
             </div>
           </article>
@@ -668,10 +755,10 @@
         <div class="hiring">
           <h3 class="hiring__title" data-reveal>How we hire</h3>
           <ol class="hiring__steps">
-            <li data-reveal><span class="hiring__num">01</span><h4>Apply</h4><p>Send your CV and GitHub. Tell us what you love building.</p></li>
-            <li data-reveal><span class="hiring__num">02</span><h4>Technical challenge</h4><p>A 5-day, real-world MVP challenge. No trick puzzles.</p></li>
-            <li data-reveal><span class="hiring__num">03</span><h4>Architecture talk</h4><p>Walk us through your decisions and trade-offs.</p></li>
-            <li data-reveal><span class="hiring__num">04</span><h4>Welcome aboard</h4><p>Ship real features with mentorship from day one.</p></li>
+            <li data-reveal><span class="hiring__num mono">01</span><h4>Apply</h4><p>Send your CV and GitHub, and tell us what you like building.</p></li>
+            <li data-reveal><span class="hiring__num mono">02</span><h4>Technical challenge</h4><p>A five-day challenge based on a real MVP. No trick puzzles.</p></li>
+            <li data-reveal><span class="hiring__num mono">03</span><h4>Architecture talk</h4><p>Walk us through your decisions and the trade-offs you made.</p></li>
+            <li data-reveal><span class="hiring__num mono">04</span><h4>Welcome aboard</h4><p>You start shipping, with a mentor from day one.</p></li>
           </ol>
         </div>
       </div>
@@ -680,36 +767,18 @@
     <!-- ============ FAQ ============ -->
     <section class="faq section" id="faq" aria-labelledby="faq-title">
       <div class="container faq__grid">
-        <header class="section-head">
-          <p class="eyebrow" data-reveal><span>06 — FAQ</span></p>
-          <h2 class="section-title" id="faq-title" data-split>Questions, answered.</h2>
-          <p class="section-lead" data-reveal>Can't find what you're looking for? <a href="#contact" class="link">Ask us directly</a> — a real engineer will reply.</p>
+        <header class="sec-head">
+          <p class="sec-index" data-reveal><span class="mono">09</span>FAQ</p>
+          <h2 class="sec-title" id="faq-title" data-split>Questions we often get.</h2>
+          <p class="sec-lead" data-reveal>Something else on your mind? <a class="link" href="#contact">Ask us</a> and an engineer will reply.</p>
         </header>
         <div class="faq__list" data-accordion>
-          <div class="qa" data-reveal>
-            <h3><button class="qa__q" type="button" aria-expanded="false" aria-controls="qa-1">How fast can you deliver an MVP?<span class="qa__icon" aria-hidden="true"></span></button></h3>
-            <div class="qa__a" id="qa-1" role="region"><div><p>Most MVPs go from kickoff to launch in a matter of weeks, depending on scope. After our first call you get a technical roadmap with a realistic timeline — before you commit to anything.</p></div></div>
-          </div>
-          <div class="qa" data-reveal>
-            <h3><button class="qa__q" type="button" aria-expanded="false" aria-controls="qa-2">Who owns the code and the IP?<span class="qa__icon" aria-hidden="true"></span></button></h3>
-            <div class="qa__a" id="qa-2" role="region"><div><p>You do — 100%. Source code, designs, infrastructure and documentation are yours from day one. No lock-in, no hostage situations.</p></div></div>
-          </div>
-          <div class="qa" data-reveal>
-            <h3><button class="qa__q" type="button" aria-expanded="false" aria-controls="qa-3">How do you use AI in development?<span class="qa__icon" aria-hidden="true"></span></button></h3>
-            <div class="qa__a" id="qa-3" role="region"><div><p>AI handles the repetitive heavy lifting — boilerplate, tests, migrations — so senior engineers can focus on architecture and quality. Every line is reviewed by a human, and your confidential data is never shared with third-party tools without your approval.</p></div></div>
-          </div>
-          <div class="qa" data-reveal>
-            <h3><button class="qa__q" type="button" aria-expanded="false" aria-controls="qa-4">Can you work with our existing team and legacy systems?<span class="qa__icon" aria-hidden="true"></span></button></h3>
-            <div class="qa__a" id="qa-4" role="region"><div><p>Yes. We plug into existing codebases, modernize legacy systems incrementally and integrate with the tools your team already uses — without stopping your business.</p></div></div>
-          </div>
-          <div class="qa" data-reveal>
-            <h3><button class="qa__q" type="button" aria-expanded="false" aria-controls="qa-5">How much does a project cost?<span class="qa__icon" aria-hidden="true"></span></button></h3>
-            <div class="qa__a" id="qa-5" role="region"><div><p>It depends on scope, complexity and timeline. We offer fixed-scope MVP sprints and flexible monthly squads. Book a free call and we'll give you a clear, honest estimate.</p></div></div>
-          </div>
-          <div class="qa" data-reveal>
-            <h3><button class="qa__q" type="button" aria-expanded="false" aria-controls="qa-6">Do you sign NDAs?<span class="qa__icon" aria-hidden="true"></span></button></h3>
-            <div class="qa__a" id="qa-6" role="region"><div><p>Of course. We're happy to sign an NDA before you share any details about your idea.</p></div></div>
-          </div>
+          <div class="qa" data-reveal><h3><button class="qa__q" type="button" aria-expanded="false" aria-controls="qa-1">How fast can you deliver an MVP?<span class="qa__icon" aria-hidden="true"></span></button></h3><div class="qa__a" id="qa-1" role="region"><div><p>Most MVPs take between six and ten weeks, depending on scope. After the first call you get a technical roadmap with a realistic timeline, before you commit to anything.</p></div></div></div>
+          <div class="qa" data-reveal><h3><button class="qa__q" type="button" aria-expanded="false" aria-controls="qa-2">Who owns the code and the IP?<span class="qa__icon" aria-hidden="true"></span></button></h3><div class="qa__a" id="qa-2" role="region"><div><p>You do, entirely. Source code, designs, infrastructure and documentation are yours from the first day. No lock-in.</p></div></div></div>
+          <div class="qa" data-reveal><h3><button class="qa__q" type="button" aria-expanded="false" aria-controls="qa-3">How do you use AI in development?<span class="qa__icon" aria-hidden="true"></span></button></h3><div class="qa__a" id="qa-3" role="region"><div><p>AI handles repetitive work like boilerplate, tests and migrations, so engineers can spend their time on architecture and quality. A person reviews every line, and your confidential data never goes to third-party tools without your approval.</p></div></div></div>
+          <div class="qa" data-reveal><h3><button class="qa__q" type="button" aria-expanded="false" aria-controls="qa-4">Can you work with our existing team and systems?<span class="qa__icon" aria-hidden="true"></span></button></h3><div class="qa__a" id="qa-4" role="region"><div><p>Yes. We join existing codebases, modernize legacy systems step by step and work with the tools your team already uses.</p></div></div></div>
+          <div class="qa" data-reveal><h3><button class="qa__q" type="button" aria-expanded="false" aria-controls="qa-5">How much does a project cost?<span class="qa__icon" aria-hidden="true"></span></button></h3><div class="qa__a" id="qa-5" role="region"><div><p>It depends on scope, complexity and timeline. MVP sprints are fixed-price, dedicated teams are billed monthly. After a free call, we send you a clear estimate.</p></div></div></div>
+          <div class="qa" data-reveal><h3><button class="qa__q" type="button" aria-expanded="false" aria-controls="qa-6">Do you sign NDAs?<span class="qa__icon" aria-hidden="true"></span></button></h3><div class="qa__a" id="qa-6" role="region"><div><p>Yes, gladly. We can sign one before you share any details about your idea.</p></div></div></div>
         </div>
       </div>
     </section>
@@ -720,55 +789,46 @@
       <div class="contact__shade" aria-hidden="true"></div>
       <div class="container contact__inner">
         <div class="contact__copy">
-          <p class="eyebrow" data-reveal><span>Let's talk</span></p>
-          <h2 class="contact__title" id="contact-title" data-split>Have an idea? Let's build it.</h2>
-          <p class="section-lead" data-reveal>Tell us about your project. You'll hear back from an engineer — not a salesperson — with a free technical roadmap.</p>
-          <ul class="contact__direct" data-reveal>
-            <li>
-              <span>Email us</span>
-              <a href="mailto:hello@hazeon.dev" class="link js-email">hello@hazeon.dev</a>
-            </li>
-            <li>
-              <span>Prefer a call?</span>
-              <a href="mailto:hello@hazeon.dev?subject=15-min%20strategy%20call" class="link">Book a 15-min strategy call</a>
-            </li>
-          </ul>
+          <p class="sec-index" data-reveal><span class="mono">10</span>Contact</p>
+          <h2 class="contact__title" id="contact-title" data-split>Tell us what you're building.</h2>
+          <p class="sec-lead" data-reveal>An engineer reads every message and replies with questions or a first plan. No sales script.</p>
+          <dl class="contact__direct" data-reveal>
+            <div><dt class="mono">Email</dt><dd><a href="mailto:hello@hazeon.dev" class="link" dir="ltr">hello@hazeon.dev</a></dd></div>
+            <div><dt class="mono">Prefer to talk?</dt><dd><a href="mailto:hello@hazeon.dev?subject=15-minute%20call" class="link">Book a 15-minute call</a></dd></div>
+          </dl>
         </div>
 
-        <form class="contact__form" id="contact-form" novalidate data-reveal>
+        <form class="form" id="contact-form" action="mailto:hello@hazeon.dev" method="post" enctype="text/plain" novalidate data-reveal>
           <fieldset class="chips">
             <legend>What do you need?</legend>
-            <label><input type="checkbox" name="needs" value="AI agents"><span>AI agents</span></label>
-            <label><input type="checkbox" name="needs" value="MVP"><span>MVP</span></label>
-            <label><input type="checkbox" name="needs" value="SaaS platform"><span>SaaS platform</span></label>
-            <label><input type="checkbox" name="needs" value="Security"><span>Security</span></label>
-            <label><input type="checkbox" name="needs" value="Cloud & DevOps"><span>Cloud &amp; DevOps</span></label>
-            <label><input type="checkbox" name="needs" value="Something else"><span>Something else</span></label>
+            <label><input type="checkbox" name="needs" value="ai"><span>AI assistant</span></label>
+            <label><input type="checkbox" name="needs" value="mvp"><span>MVP</span></label>
+            <label><input type="checkbox" name="needs" value="saas"><span>SaaS platform</span></label>
+            <label><input type="checkbox" name="needs" value="security"><span>Security</span></label>
+            <label><input type="checkbox" name="needs" value="cloud"><span>Cloud & DevOps</span></label>
+            <label><input type="checkbox" name="needs" value="other"><span>Something else</span></label>
           </fieldset>
           <div class="field-row">
             <div class="field">
-              <input type="text" id="f-name" name="name" placeholder=" " autocomplete="name" required>
+              <input type="text" id="f-name" name="name" placeholder=" " autocomplete="name" maxlength="80" required>
               <label for="f-name">Your name</label>
             </div>
             <div class="field">
-              <input type="email" id="f-email" name="email" placeholder=" " autocomplete="email" required>
+              <input type="email" id="f-email" name="email" placeholder=" " autocomplete="email" maxlength="120" required dir="ltr">
               <label for="f-email">Email</label>
             </div>
           </div>
           <div class="field">
-            <input type="text" id="f-company" name="company" placeholder=" " autocomplete="organization">
+            <input type="text" id="f-company" name="company" placeholder=" " autocomplete="organization" maxlength="100">
             <label for="f-company">Company <em>(optional)</em></label>
           </div>
           <div class="field">
-            <textarea id="f-message" name="message" rows="4" placeholder=" " required></textarea>
+            <textarea id="f-message" name="message" rows="4" placeholder=" " maxlength="1500" required></textarea>
             <label for="f-message">Tell us about your project</label>
           </div>
           <div class="form__foot">
-            <button type="submit" class="btn btn--primary btn--lg" data-magnetic>
-              <span>Send message</span>
-              <svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </button>
-            <p class="form__note" id="form-note" role="status" aria-live="polite">Opens your email app with everything pre-filled.</p>
+            <button type="submit" class="btn btn--primary btn--lg" data-magnetic><span>Send message</span><svg class="btn__arrow" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+            <p class="form__note" id="form-note" role="status" aria-live="polite">This opens your email app with everything filled in. Nothing is stored on our side.</p>
           </div>
         </form>
       </div>
@@ -780,38 +840,58 @@
     <div class="container">
       <div class="footer__top">
         <div class="footer__brand">
-          <a href="#top" class="brand" aria-label="HAZEON — back to top">
+          <a href="#top" class="brand" aria-label="HAZEON, back to top">
             <svg class="brand__mark" aria-hidden="true"><use href="#hz-mark"/></svg>
             <span class="brand__word">HAZEON</span>
           </a>
-          <p>AI-first software studio. We design, build and scale secure products for startups and enterprises.</p>
+          <p>A software studio that designs, builds and runs AI products, web platforms and MVPs.</p>
         </div>
         <nav class="footer__col" aria-label="Services">
-          <h3>Services</h3>
-          <a href="#services">AI Agents &amp; Automation</a>
-          <a href="#services">Rapid MVPs</a>
-          <a href="#services">SaaS Platforms</a>
-          <a href="#services">Security &amp; DevOps</a>
+          <h3 class="mono">Services</h3>
+          <a href="#services">AI assistants & automation</a>
+          <a href="#services">MVPs for founders</a>
+          <a href="#services">SaaS & web platforms</a>
+          <a href="#services">Security & DevSecOps</a>
         </nav>
         <nav class="footer__col" aria-label="Company">
-          <h3>Company</h3>
-          <a href="#about">About</a>
+          <h3 class="mono">Company</h3>
+          <a href="#studio">Studio</a>
           <a href="#process">Process</a>
           <a href="#careers">Careers</a>
           <a href="#faq">FAQ</a>
         </nav>
         <div class="footer__col">
-          <h3>Contact</h3>
-          <a href="mailto:hello@hazeon.dev" class="js-email">hello@hazeon.dev</a>
-          <a href="https://github.com/habib1010-tech" target="_blank" rel="noopener">GitHub ↗</a>
+          <h3 class="mono">Contact</h3>
+          <a href="mailto:hello@hazeon.dev" dir="ltr">hello@hazeon.dev</a>
+          <a href="https://github.com/habib1010-tech" target="_blank" rel="noopener noreferrer">GitHub<span class="sr-only"> (opens in a new tab)</span> <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="footer__col footer__prefs">
+          <h3 class="mono">Preferences</h3>
+          <div class="lang lang--names" role="group" aria-label="Language"><a href="./" hreflang="en" lang="en" aria-current="page" data-lang="en">English</a><a href="fr/" hreflang="fr" lang="fr" data-lang="fr">Français</a><a href="ar/" hreflang="ar" lang="ar" data-lang="ar">العربية</a></div>
+          <div class="pref">
+            <span class="pref__label">Theme</span>
+            <div class="seg" role="group" aria-label="Theme">
+              <button type="button" data-set-theme="light" aria-pressed="false">Light</button>
+              <button type="button" data-set-theme="dark" aria-pressed="true">Dark</button>
+            </div>
+          </div>
+          <div class="pref">
+            <span class="pref__label">Animations</span>
+            <div class="seg" role="group" aria-label="Animations">
+              <button type="button" data-set-motion="full" aria-pressed="true">On</button>
+              <button type="button" data-set-motion="reduced" aria-pressed="false">Reduced</button>
+            </div>
+          </div>
         </div>
       </div>
       <div class="footer__wordmark" aria-hidden="true"><span>HAZEON</span></div>
       <div class="footer__bottom">
-        <p>© <span id="year">2026</span> HAZEON Software Solutions. All rights reserved.</p>
-        <a href="#top" class="footer__top-link">Back to top ↑</a>
+        <p>© 2026 HAZEON Software Solutions. All rights reserved.</p>
+        <a href="#top" class="footer__top-link">Back to top <span aria-hidden="true">↑</span></a>
       </div>
     </div>
   </footer>
+
+  <script type="application/json" id="i18n">{"menuOpen":"Open menu","menuClose":"Close menu","themeToLight":"Switch to light theme","themeToDark":"Switch to dark theme","formError":"Please add your name, a valid email and a few words about the project.","formOpening":"Opening your email app. If nothing happens, write to {email}.","mailSubject":"Project inquiry from {name}","mailHello":"Hello HAZEON,","mailNeeds":"What I need","mailName":"Name","mailEmail":"Email","mailCompany":"Company","prefill":"Hello, I'm interested in: {subject}.","applyHello":"Hello HAZEON, I'd like to apply for the {role} internship. My CV and GitHub are attached.","lang":"en","dir":"ltr","email":"hello@hazeon.dev"}</script>
 </body>
 </html>

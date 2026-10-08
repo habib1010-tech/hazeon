@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="{{lang}}" dir="{{dir}}" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  {{csp}}
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>{{=meta.title}}</title>
+  <meta name="description" content="{{=meta.description}}">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="{{canonical}}">
+  {{alternates}}
+  <meta name="theme-color" content="#00141f">
+  <meta name="color-scheme" content="dark light">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="HAZEON">
+  <meta property="og:locale" content="{{=meta.locale}}">
+  {{ogAlternates}}
+  <meta property="og:title" content="{{=meta.ogTitle}}">
+  <meta property="og:description" content="{{=meta.ogDescription}}">
+  <meta property="og:url" content="{{canonical}}">
+  <meta property="og:image" content="{{siteUrl}}assets/img/og-{{lang}}.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="{{=meta.ogImageAlt}}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{=meta.ogTitle}}">
+  <meta name="twitter:description" content="{{=meta.ogDescription}}">
+  <meta name="twitter:image" content="{{siteUrl}}assets/img/og-{{lang}}.png">
+
+  <link rel="icon" href="{{root}}assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{root}}favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{root}}apple-touch-icon.png">
+  <link rel="manifest" href="{{root}}site.webmanifest">
+  {{fontPreloads}}
+
+  <script>{{prefsScript}}</script>
+  <link rel="stylesheet" href="{{css}}">
+  <script type="module" src="{{js}}"></script>
+  {{modulePreloads}}
+  {{jsonld}}
+</head>
+<body>
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="hz-mark" viewBox="45 16 607 826">
+      <path fill="currentColor" d="M163 134 L55 198 L55 660 L165 724 L166 484 L294 480 L294 374 L167 370 Z"/>
+      <path class="hz-light" d="M298 190 L404 250 L406 364 L298 546 Z"/>
+      <path fill="currentColor" d="M348 26 L297 56 L297 120 L527 256 L297 650 L297 800 L352 832 L407 800 L407 677 L642 284 L642 202 Z"/>
+      <path class="hz-light" d="M407 678 L638 540 L638 658 L407 795 Z"/>
+    </symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.6A8.4 8.4 0 0 1 9.4 4a8.4 8.4 0 1 0 10.6 10.6z"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">{{ui.skip}}</a>
+  <div class="progress" aria-hidden="true"><span></span></div>
+  <div class="cursor" aria-hidden="true"><span></span></div>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#top" class="brand" aria-label="{{=ui.home}}">
+        <svg class="brand__mark" aria-hidden="true"><use href="#hz-mark"/></svg>
+        <span class="brand__word">HAZEON</span>
+      </a>
+      <nav class="nav__links" aria-label="{{=ui.navMain}}">
+        <a href="#services">{{nav.services}}</a>
+        <a href="#process">{{nav.process}}</a>
+        <a href="#engage">{{nav.engage}}</a>
+        <a href="#careers">{{nav.careers}} <span class="nav__count">{{roles}}</span></a>
+        <a href="#faq">{{nav.faq}}</a>
+      </nav>
+      <div class="nav__tools">
+        {{langSwitch}}
+        <button class="icon-btn theme-toggle" type="button" data-theme-toggle aria-label="{{=ui.themeToLight}}">
+          <svg class="theme-toggle__sun" aria-hidden="true"><use href="#i-sun"/></svg>
+          <svg class="theme-toggle__moon" aria-hidden="true"><use href="#i-moon"/></svg>
+        </button>
+        <a href="#contact" class="btn btn--primary btn--sm nav__cta"><span>{{nav.cta}}</span><svg class="btn__arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <button class="nav__burger" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="{{=ui.menuOpen}}"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <nav class="mobile-menu__links" aria-label="{{=ui.navMain}}">
+      <a href="#services"><span class="mono">01</span>{{nav.services}}</a>
+      <a href="#process"><span class="mono">02</span>{{nav.process}}</a>
+      <a href="#engage"><span class="mono">03</span>{{nav.engage}}</a>
+      <a href="#careers"><span class="mono">04</span>{{nav.careers}}</a>
+      <a href="#faq"><span class="mono">05</span>{{nav.faq}}</a>
+      <a href="#contact"><span class="mono">06</span>{{nav.contact}}</a>
+    </nav>
+    <div class="mobile-menu__foot">
+      {{langLinks}}
+      <button class="icon-btn theme-toggle" type="button" data-theme-toggle aria-label="{{=ui.themeToLight}}">
+        <svg class="theme-toggle__sun" aria-hidden="true"><use href="#i-sun"/></svg>
+        <svg class="theme-toggle__moon" aria-hidden="true"><use href="#i-moon"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <main id="main" tabindex="-1">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero__sticky">
+        <div class="hero__bg" aria-hidden="true"><div class="hero__grid"></div></div>
+        <canvas class="hero__canvas" id="hero-canvas" aria-hidden="true"></canvas>
+        <div class="hero__fallback" aria-hidden="true"><svg><use href="#hz-mark"/></svg></div>
+
+        <div class="hero__parts" aria-hidden="true">
+          <span class="part"><i></i><b class="mono">A</b>{{hero.part1}}</span>
+          <span class="part"><i></i><b class="mono">B</b>{{hero.part2}}</span>
+          <span class="part"><i></i><b class="mono">C</b>{{hero.part3}}</span>
+          <span class="part"><i></i><b class="mono">D</b>{{hero.part4}}</span>
+        </div>
+        <p class="hero__statement" aria-hidden="true">{{hero.statement}}</p>
+
+        <div class="container hero__content">
+          <p class="hero__kicker mono intro-fade"><span class="hero__kicker-mark"></span>HAZEON / {{hero.kicker}}</p>
+          <h1 class="hero__title" id="hero-title">
+            <span class="hero__line"><span class="hero__line-inner">{{hero.line1}}</span></span>
+            <span class="hero__line"><span class="hero__line-inner">{{hero.line2}}</span></span>
+          </h1>
+          <p class="hero__lead intro-fade">{{hero.lead}}</p>
+          <div class="hero__ctas intro-fade">
+            <a href="#contact" class="btn btn--primary btn--lg" data-magnetic><span>{{hero.ctaPrimary}}</span><svg class="btn__arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a href="#careers" class="btn btn--ghost btn--lg" data-magnetic><span>{{hero.ctaSecondary}}</span><span class="btn__count mono">{{roles}}</span></a>
+          </div>
+        </div>
+
+        <div class="container hero__footer">
+          <p class="scroll-cue mono intro-fade"><span class="scroll-cue__line" aria-hidden="true"></span>{{hero.scroll}}</p>
+          <p class="hero__figure mono intro-fade">{{hero.figure}} <span class="hero__hint">{{hero.figureHint}}</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TICKER ============ -->
+    <section class="ticker" aria-label="{{=ticker.label}}">
+      <div class="ticker__row" data-marquee>
+        <ul class="ticker__track">
+          <li>{{ticker.i1}}</li><li>{{ticker.i2}}</li><li>{{ticker.i3}}</li><li>{{ticker.i4}}</li><li>{{ticker.i5}}</li><li>{{ticker.i6}}</li><li>{{ticker.i7}}</li><li>{{ticker.i8}}</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ STUDIO ============ -->
+    <section class="studio section" id="studio" aria-labelledby="studio-title">
+      <div class="container">
+        <p class="sec-index" data-reveal><span class="mono">01</span>{{studio.label}}</p>
+        <h2 class="sr-only" id="studio-title">{{studio.title}}</h2>
+        <p class="studio__text" data-words>{{studio.text}}</p>
+        <dl class="facts">
+          <div class="fact" data-reveal>
+            <dt class="fact__value"><span class="fact__num" data-count="15">15</span><span class="fact__unit">{{studio.f1unit}}</span></dt>
+            <dd>{{studio.f1label}}</dd>
+          </div>
+          <div class="fact" data-reveal>
+            <dt class="fact__value"><span class="fact__num" data-count="1">1</span><span class="fact__unit">{{studio.f2unit}}</span></dt>
+            <dd>{{studio.f2label}}</dd>
+          </div>
+          <div class="fact" data-reveal>
+            <dt class="fact__value"><span class="fact__num" data-count="100">100</span><span class="fact__unit">{{studio.f3unit}}</span></dt>
+            <dd>{{studio.f3label}}</dd>
+          </div>
+          <div class="fact" data-reveal>
+            <dt class="fact__value"><span class="fact__num">{{studio.f4value}}</span></dt>
+            <dd>{{studio.f4label}}</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ============ ANATOMY (3D exploded stack) ============ -->
+    <section class="anatomy section" id="anatomy" aria-labelledby="anatomy-title">
+      <div class="container">
+        <header class="sec-head">
+          <p class="sec-index" data-reveal><span class="mono">02</span>{{anatomy.label}}</p>
+          <h2 class="sec-title" id="anatomy-title" data-split>{{anatomy.title}}</h2>
+          <p class="sec-lead" data-reveal>{{anatomy.lead}}</p>
+        </header>
+
+        <div class="anatomy__body">
+          <figure class="anatomy__figure" aria-hidden="true">
+            <div class="frame">
+              <div class="stack" data-stack>
+                <div class="stack__scene">
+                  <div class="plate" data-layer="4">
+                    <svg viewBox="0 0 200 200" class="plate__art">
+                      <rect class="a-line" x="22" y="30" width="156" height="140" rx="6"/>
+                      <path class="a-line" d="M22 48h156"/>
+                      <circle class="a-dot" cx="33" cy="39" r="2.6"/><circle class="a-dot" cx="42" cy="39" r="2.6"/><circle class="a-dot" cx="51" cy="39" r="2.6"/>
+                      <rect class="a-fill" x="32" y="58" width="34" height="102" rx="3"/>
+                      <rect class="a-fill" x="74" y="58" width="94" height="30" rx="3"/>
+                      <rect class="a-line" x="74" y="96" width="45" height="34" rx="3"/>
+                      <rect class="a-line" x="123" y="96" width="45" height="34" rx="3"/>
+                      <rect class="a-accent" x="74" y="140" width="42" height="12" rx="3"/>
+                    </svg>
+                  </div>
+                  <div class="plate" data-layer="3">
+                    <svg viewBox="0 0 200 200" class="plate__art">
+                      <path class="a-flow" d="M76 48 L100 100 M76 100 H100 M76 152 L100 100 M124 48 L100 100 M124 100 H100 M124 152 L100 100"/>
+                      <rect class="a-line" x="28" y="40" width="48" height="16" rx="8"/>
+                      <rect class="a-line" x="28" y="92" width="48" height="16" rx="8"/>
+                      <rect class="a-line" x="28" y="144" width="48" height="16" rx="8"/>
+                      <rect class="a-line" x="124" y="40" width="48" height="16" rx="8"/>
+                      <rect class="a-line" x="124" y="92" width="48" height="16" rx="8"/>
+                      <rect class="a-line" x="124" y="144" width="48" height="16" rx="8"/>
+                      <circle class="a-fill" cx="100" cy="100" r="17"/>
+                      <circle class="a-hi" cx="100" cy="100" r="17"/>
+                      <path class="a-line" d="M93 100h14M100 93v14"/>
+                    </svg>
+                  </div>
+                  <div class="plate" data-layer="2">
+                    <svg viewBox="0 0 200 200" class="plate__art">
+                      <path class="a-flow" d="M100 100 L100 38 M100 100 L154 69 M100 100 L154 131 M100 100 L100 162 M100 100 L46 131 M100 100 L46 69"/>
+                      <path class="a-line" d="M100 38 L154 69 L154 131 L100 162 L46 131 L46 69 Z"/>
+                      <circle class="a-node" cx="100" cy="38" r="8"/><circle class="a-node" cx="154" cy="69" r="8"/><circle class="a-node" cx="154" cy="131" r="8"/>
+                      <circle class="a-node" cx="100" cy="162" r="8"/><circle class="a-node" cx="46" cy="131" r="8"/><circle class="a-node" cx="46" cy="69" r="8"/>
+                      <circle class="a-fill" cx="100" cy="100" r="22"/>
+                      <circle class="a-hi" cx="100" cy="100" r="22"/>
+                      <circle class="a-hi a-pulse" cx="100" cy="100" r="22"/>
+                      <circle class="a-accent" cx="100" cy="100" r="6"/>
+                    </svg>
+                  </div>
+                  <div class="plate" data-layer="1">
+                    <svg viewBox="0 0 200 200" class="plate__art">
+                      <rect class="a-line" x="24" y="40" width="92" height="120" rx="4"/>
+                      <path class="a-line" d="M24 64h92M24 88h92M24 112h92M24 136h92M56 40v120"/>
+                      <rect class="a-fill" x="24" y="40" width="92" height="24" rx="4"/>
+                      <path class="a-line" d="M134 56v84c0 6 11 10 24 10s24-4 24-10V56"/>
+                      <ellipse class="a-line" cx="158" cy="56" rx="24" ry="9"/>
+                      <path class="a-line" d="M134 84c0 6 11 10 24 10s24-4 24-10M134 112c0 6 11 10 24 10s24-4 24-10"/>
+                      <circle class="a-accent" cx="158" cy="56" r="3.5"/>
+                    </svg>
+                  </div>
+                  <div class="plate" data-layer="0">
+                    <svg viewBox="0 0 200 200" class="plate__art">
+                      <rect class="a-line" x="36" y="36" width="128" height="26" rx="3"/>
+                      <rect class="a-line" x="36" y="70" width="128" height="26" rx="3"/>
+                      <rect class="a-line" x="36" y="104" width="128" height="26" rx="3"/>
+                      <circle class="a-led" cx="48" cy="49" r="3"/><circle class="a-led" cx="48" cy="83" r="3"/><circle class="a-led" cx="48" cy="117" r="3"/>
+                      <path class="a-line" d="M110 49h44M110 83h44M110 117h44"/>
+                      <path class="a-flow" d="M36 158h128"/>
+                      <rect class="a-fill" x="30" y="152" width="12" height="12" rx="2"/><rect class="a-fill" x="74" y="152" width="12" height="12" rx="2"/><rect class="a-fill" x="114" y="152" width="12" height="12" rx="2"/>
+                      <rect class="a-accent" x="158" y="152" width="12" height="12" rx="2"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <figcaption class="frame__caption mono">{{anatomy.figure}}</figcaption>
+            </div>
+          </figure>
+
+          <ol class="anatomy__steps">
+            <li class="layer-step" data-layer="4">
+              <p class="layer-step__num mono">L5</p>
+              <h3>{{anatomy.l1name}}</h3>
+              <p>{{anatomy.l1text}}</p>
+              <p class="layer-step__tags mono">React · Next.js · Flutter · Figma</p>
+            </li>
+            <li class="layer-step" data-layer="3">
+              <p class="layer-step__num mono">L4</p>
+              <h3>{{anatomy.l2name}}</h3>
+              <p>{{anatomy.l2text}}</p>
+              <p class="layer-step__tags mono">Node.js · FastAPI · GraphQL · REST</p>
+            </li>
+            <li class="layer-step" data-layer="2">
+              <p class="layer-step__num mono">L3</p>
+              <h3>{{anatomy.l3name}}</h3>
+              <p>{{anatomy.l3text}}</p>
+              <p class="layer-step__tags mono">LLMs · LangGraph · LlamaIndex · Evals</p>
+            </li>
+            <li class="layer-step" data-layer="1">
+              <p class="layer-step__num mono">L2</p>
+              <h3>{{anatomy.l4name}}</h3>
+              <p>{{anatomy.l4text}}</p>
+              <p class="layer-step__tags mono">PostgreSQL · Redis · pgvector · ETL</p>
+            </li>
+            <li class="layer-step" data-layer="0">
+              <p class="layer-step__num mono">L1</p>
+              <h3>{{anatomy.l5name}}</h3>
+              <p>{{anatomy.l5text}}</p>
+              <p class="layer-step__tags mono">AWS · Docker · Terraform · GitHub Actions</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES ============ -->
+    <section class="services section" id="services" aria-labelledby="services-title">
+      <div class="container">
+        <header class="sec-head sec-head--split">
+          <div>
+            <p class="sec-index" data-reveal><span class="mono">03</span>{{services.label}}</p>
+            <h2 class="sec-title" id="services-title" data-split>{{services.title}}</h2>
+          </div>
+          <p class="sec-lead" data-reveal>{{services.lead}}</p>
+        </header>
+
+        <div class="svc-grid">
+          <article class="svc" data-reveal data-inview>
+            <div class="svc__fig" aria-hidden="true">
+              <svg viewBox="0 0 320 180" class="ill ill--agents">
+                <path class="i-flow" d="M160 90 L70 42 M160 90 L58 126 M160 90 L252 40 M160 90 L266 118 M160 90 L160 160"/>
+                <rect class="i-box" x="56" y="28" width="28" height="28" rx="6"/><path class="i-soft" d="M63 38h14M63 44h10"/>
+                <rect class="i-box" x="44" y="112" width="28" height="28" rx="6"/><path class="i-soft" d="M51 126h14M58 119v14"/>
+                <rect class="i-box" x="238" y="26" width="28" height="28" rx="6"/><circle class="i-soft" cx="252" cy="40" r="6"/>
+                <rect class="i-box" x="252" y="104" width="28" height="28" rx="6"/><path class="i-soft" d="M259 122l5-8 5 5 5-7"/>
+                <rect class="i-box" x="146" y="146" width="28" height="28" rx="6"/><path class="i-soft" d="M153 156h14v10h-14z"/>
+                <circle class="i-ring" cx="160" cy="90" r="24"/>
+                <circle class="i-core" cx="160" cy="90" r="24"/>
+                <circle class="i-accent" cx="160" cy="90" r="7"/>
+              </svg>
+            </div>
+            <div class="svc__body">
+              <p class="svc__num mono">03.1</p>
+              <h3>{{services.s1title}}</h3>
+              <p>{{services.s1text}}</p>
+              <p class="svc__get mono">{{services.youGet}}</p>
+              <ul class="svc__list"><li>{{services.s1g1}}</li><li>{{services.s1g2}}</li><li>{{services.s1g3}}</li></ul>
+            </div>
+          </article>
+
+          <article class="svc" data-reveal data-inview>
+            <div class="svc__fig" aria-hidden="true">
+              <svg viewBox="0 0 320 180" class="ill ill--mvp ill--flip">
+                <rect class="i-dash" x="34" y="38" width="64" height="104" rx="6"/>
+                <path class="i-soft" d="M44 56h40M44 66h28M44 100l10-8 8 6 12-12M44 120h44"/>
+                <path class="i-line i-arrowline" d="M110 90h40M142 82l8 8-8 8"/>
+                <rect class="i-line" x="166" y="12" width="96" height="156" rx="14"/>
+                <path class="i-line" d="M200 22h28"/>
+                <rect class="i-build b1" x="178" y="34" width="72" height="10" rx="3"/>
+                <rect class="i-build i-fillsoft b2" x="178" y="52" width="72" height="44" rx="4"/>
+                <rect class="i-build b3" x="178" y="104" width="62" height="6" rx="3"/>
+                <rect class="i-build b4" x="178" y="116" width="48" height="6" rx="3"/>
+                <rect class="i-build b5" x="178" y="128" width="56" height="6" rx="3"/>
+                <rect class="i-build i-accentfill b6" x="178" y="144" width="72" height="14" rx="4"/>
+              </svg>
+            </div>
+            <div class="svc__body">
+              <p class="svc__num mono">03.2</p>
+              <h3>{{services.s2title}}</h3>
+              <p>{{services.s2text}}</p>
+              <p class="svc__get mono">{{services.youGet}}</p>
+              <ul class="svc__list"><li>{{services.s2g1}}</li><li>{{services.s2g2}}</li><li>{{services.s2g3}}</li></ul>
+            </div>
+          </article>
+
+          <article class="svc" data-reveal data-inview>
+            <div class="svc__fig" aria-hidden="true">
+              <svg viewBox="0 0 320 180" class="ill ill--saas">
+                <rect class="i-line" x="20" y="14" width="280" height="152" rx="8"/>
+                <path class="i-line" d="M70 14v152"/>
+                <path class="i-soft" d="M32 34h26M32 48h20M32 62h24M32 76h18"/>
+                <rect class="i-box" x="84" y="28" width="62" height="30" rx="4"/>
+                <rect class="i-box" x="154" y="28" width="62" height="30" rx="4"/>
+                <rect class="i-box" x="224" y="28" width="62" height="30" rx="4"/>
+                <path class="i-soft" d="M92 38h24M162 38h30M232 38h20"/>
+                <path class="i-hiline" d="M92 50h34"/>
+                <g class="i-bars">
+                  <rect x="88" y="104" width="14" height="48" rx="2"/>
+                  <rect x="108" y="88" width="14" height="64" rx="2"/>
+                  <rect x="128" y="116" width="14" height="36" rx="2"/>
+                  <rect x="148" y="80" width="14" height="72" rx="2"/>
+                  <rect x="168" y="96" width="14" height="56" rx="2"/>
+                </g>
+                <path class="i-chart" pathLength="1" d="M202 140 L222 122 L240 128 L258 98 L284 84"/>
+                <circle class="i-accent" cx="284" cy="84" r="4"/>
+              </svg>
+            </div>
+            <div class="svc__body">
+              <p class="svc__num mono">03.3</p>
+              <h3>{{services.s3title}}</h3>
+              <p>{{services.s3text}}</p>
+              <p class="svc__get mono">{{services.youGet}}</p>
+              <ul class="svc__list"><li>{{services.s3g1}}</li><li>{{services.s3g2}}</li><li>{{services.s3g3}}</li></ul>
+            </div>
+          </article>
+
+          <article class="svc" data-reveal data-inview>
+            <div class="svc__fig" aria-hidden="true">
+              <svg viewBox="0 0 320 180" class="ill ill--security">
+                <defs><clipPath id="shield-clip"><path d="M160 14 L224 38 V92 C224 130 196 156 160 168 C124 156 96 130 96 92 V38 Z"/></clipPath></defs>
+                <path class="i-line" d="M160 14 L224 38 V92 C224 130 196 156 160 168 C124 156 96 130 96 92 V38 Z"/>
+                <g clip-path="url(#shield-clip)">
+                  <path class="i-soft" d="M116 52h56M116 66h80M116 80h40M116 94h70M116 108h52M116 122h64M130 136h40"/>
+                  <path class="i-flag" d="M116 94h70"/>
+                  <rect class="i-scan" x="96" y="20" width="128" height="3"/>
+                </g>
+                <path class="i-check" pathLength="1" d="M142 92 L156 106 L182 78"/>
+                <rect class="i-box" x="34" y="66" width="38" height="48" rx="5"/><path class="i-line" d="M42 66v-10a11 11 0 0 1 22 0v10"/><circle class="i-accent" cx="53" cy="88" r="4"/>
+                <path class="i-soft" d="M248 60h40M248 76h28M248 92h36M248 108h22"/>
+              </svg>
+            </div>
+            <div class="svc__body">
+              <p class="svc__num mono">03.4</p>
+              <h3>{{services.s4title}}</h3>
+              <p>{{services.s4text}}</p>
+              <p class="svc__get mono">{{services.youGet}}</p>
+              <ul class="svc__list"><li>{{services.s4g1}}</li><li>{{services.s4g2}}</li><li>{{services.s4g3}}</li></ul>
+            </div>
+          </article>
+
+          <article class="svc" data-reveal data-inview>
+            <div class="svc__fig" aria-hidden="true">
+              <svg viewBox="0 0 320 180" class="ill ill--pipeline ill--flip">
+                <path class="i-line" d="M40 96h240"/>
+                <g class="stage s1"><circle class="i-stage" cx="54" cy="96" r="16"/><circle class="i-soft" cx="54" cy="96" r="4"/></g>
+                <g class="stage s2"><circle class="i-stage" cx="125" cy="96" r="16"/><rect class="i-soft" x="119" y="90" width="12" height="12" rx="2"/></g>
+                <g class="stage s3"><circle class="i-stage" cx="196" cy="96" r="16"/><path class="i-soft" d="M189 96l5 5 9-10"/></g>
+                <g class="stage s4"><circle class="i-stage" cx="267" cy="96" r="16"/><path class="i-soft" d="M267 103V89M261 95l6-6 6 6"/></g>
+                <rect class="i-packet" x="48" y="60" width="12" height="12" rx="3"/>
+                <path class="i-soft" d="M236 44c0-12 10-20 22-20 10 0 18 6 21 14 9 1 15 8 15 16 0 9-7 16-16 16h-38c-9 0-16-6-16-14s6-13 12-12z"/>
+                <path class="i-dash" d="M54 128v20h213v-20"/>
+              </svg>
+            </div>
+            <div class="svc__body">
+              <p class="svc__num mono">03.5</p>
+              <h3>{{services.s5title}}</h3>
+              <p>{{services.s5text}}</p>
+              <p class="svc__get mono">{{services.youGet}}</p>
+              <ul class="svc__list"><li>{{services.s5g1}}</li><li>{{services.s5g2}}</li><li>{{services.s5g3}}</li></ul>
+            </div>
+          </article>
+
+          <article class="svc" data-reveal data-inview>
+            <div class="svc__fig" aria-hidden="true">
+              <svg viewBox="0 0 320 180" class="ill ill--legacy ill--flip">
+                <rect class="i-line" x="30" y="36" width="104" height="108" rx="6"/>
+                <path class="i-soft i-spaghetti" d="M44 56c20 0 10 18 30 18s0-20 22-20 8 26 26 26M44 98c16-8 22 14 38 6s12-18 28-10 6 20 14 20M48 126c14 6 24-10 40-2s26 2 30-6"/>
+                <path class="i-line i-arrowline" d="M148 90h26M166 82l8 8-8 8"/>
+                <rect class="i-mod m1" x="188" y="36" width="44" height="30" rx="4"/>
+                <rect class="i-mod m2" x="242" y="36" width="44" height="30" rx="4"/>
+                <rect class="i-mod m3" x="188" y="75" width="44" height="30" rx="4"/>
+                <rect class="i-mod m4" x="242" y="75" width="44" height="30" rx="4"/>
+                <rect class="i-mod m5" x="188" y="114" width="44" height="30" rx="4"/>
+                <rect class="i-mod i-mod--accent m6" x="242" y="114" width="44" height="30" rx="4"/>
+              </svg>
+            </div>
+            <div class="svc__body">
+              <p class="svc__num mono">03.6</p>
+              <h3>{{services.s6title}}</h3>
+              <p>{{services.s6text}}</p>
+              <p class="svc__get mono">{{services.youGet}}</p>
+              <ul class="svc__list"><li>{{services.s6g1}}</li><li>{{services.s6g2}}</li><li>{{services.s6g3}}</li></ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ASSISTANT (RAG infographic) ============ -->
+    <section class="assistant section" id="assistant" aria-labelledby="assistant-title">
+      <div class="container">
+        <header class="sec-head">
+          <p class="sec-index" data-reveal><span class="mono">04</span>{{assistant.label}}</p>
+          <h2 class="sec-title" id="assistant-title" data-split>{{assistant.title}}</h2>
+          <p class="sec-lead" data-reveal>{{assistant.lead}}</p>
+        </header>
+
+        <div class="assistant__body" data-assistant>
+          <ol class="flow">
+            <li class="flow__node"><span class="flow__num mono">01</span><div><h3>{{assistant.n1title}}</h3><p>{{assistant.n1text}}</p></div></li>
+            <li class="flow__node"><span class="flow__num mono">02</span><div><h3>{{assistant.n2title}}</h3><p>{{assistant.n2text}}</p></div></li>
+            <li class="flow__node"><span class="flow__num mono">03</span><div><h3>{{assistant.n3title}}</h3><p>{{assistant.n3text}}</p></div></li>
+            <li class="flow__node"><span class="flow__num mono">04</span><div><h3>{{assistant.n4title}}</h3><p>{{assistant.n4text}}</p></div></li>
+            <li class="flow__node"><span class="flow__num mono">05</span><div><h3>{{assistant.n5title}}</h3><p>{{assistant.n5text}}</p></div></li>
+            <li class="flow__node"><span class="flow__num mono">06</span><div><h3>{{assistant.n6title}}</h3><p>{{assistant.n6text}}</p></div></li>
+          </ol>
+
+          <figure class="chat" data-reveal>
+            <div class="chat__bar"><span class="chat__dot"></span><span class="mono">{{assistant.chatLabel}}</span></div>
+            <div class="chat__body">
+              <div class="msg msg--you">
+                <p class="msg__who mono">{{assistant.you}}</p>
+                <p class="msg__text">{{assistant.question}}</p>
+              </div>
+              <p class="chat__status mono"><span class="chat__spinner" aria-hidden="true"></span>{{assistant.searching}}</p>
+              <div class="msg msg--bot">
+                <p class="msg__who mono">{{assistant.bot}}</p>
+                <p class="msg__text" data-type>{{assistant.answer}}</p>
+                <div class="msg__sources">
+                  <p class="mono">{{assistant.sources}}</p>
+                  <ul><li><span class="mono">[1]</span>{{assistant.source1}}</li><li><span class="mono">[2]</span>{{assistant.source2}}</li></ul>
+                </div>
+              </div>
+            </div>
+            <figcaption class="chat__note mono">{{assistant.note}}</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROCESS (Gantt) ============ -->
+    <section class="process" id="process" aria-labelledby="process-title">
+      <div class="process__sticky">
+        <div class="container">
+          <header class="sec-head sec-head--split">
+            <div>
+              <p class="sec-index" data-reveal><span class="mono">05</span>{{process.label}}</p>
+              <h2 class="sec-title" id="process-title" data-split>{{process.title}}</h2>
+            </div>
+            <p class="sec-lead" data-reveal>{{process.lead}}</p>
+          </header>
+
+          <div class="gantt" data-gantt>
+            <div class="gantt__head" aria-hidden="true">
+              <span class="gantt__label mono">{{process.weeks}}</span>
+              <ol class="gantt__weeks mono"><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>{{process.after}}</li></ol>
+            </div>
+            <ol class="gantt__rows">
+              <li class="gantt__row" data-start="0" data-end="1">
+                <span class="gantt__name">{{process.p1name}}</span>
+                <span class="gantt__track" aria-hidden="true"><span class="gantt__bar"><span class="gantt__fill"></span></span><i class="gantt__mark gantt__mark--start"></i></span>
+              </li>
+              <li class="gantt__row" data-start="0.5" data-end="2">
+                <span class="gantt__name">{{process.p2name}}</span>
+                <span class="gantt__track" aria-hidden="true"><span class="gantt__bar"><span class="gantt__fill"></span></span></span>
+              </li>
+              <li class="gantt__row" data-start="2" data-end="7">
+                <span class="gantt__name">{{process.p3name}}</span>
+                <span class="gantt__track" aria-hidden="true"><span class="gantt__bar"><span class="gantt__fill"></span></span><i class="gantt__demo d1"></i><i class="gantt__demo d2"></i><i class="gantt__demo d3"></i><i class="gantt__demo d4"></i><i class="gantt__demo d5"></i></span>
+              </li>
+              <li class="gantt__row" data-start="4" data-end="8">
+                <span class="gantt__name">{{process.p4name}}</span>
+                <span class="gantt__track" aria-hidden="true"><span class="gantt__bar gantt__bar--dashed"><span class="gantt__fill"></span></span></span>
+              </li>
+              <li class="gantt__row" data-start="7.5" data-end="8">
+                <span class="gantt__name">{{process.p5name}}</span>
+                <span class="gantt__track" aria-hidden="true"><span class="gantt__bar gantt__bar--accent"><span class="gantt__fill"></span></span><i class="gantt__mark gantt__mark--launch"></i></span>
+              </li>
+              <li class="gantt__row" data-start="8" data-end="9">
+                <span class="gantt__name">{{process.p6name}}</span>
+                <span class="gantt__track" aria-hidden="true"><span class="gantt__bar gantt__bar--open"><span class="gantt__fill"></span></span></span>
+              </li>
+            </ol>
+            <div class="gantt__now" aria-hidden="true"><span class="mono">{{process.now}}</span></div>
+            <div class="gantt__legend mono" aria-hidden="true"><span><i class="gantt__demo"></i>{{process.demo}}</span><span><i class="gantt__mark"></i>{{process.milestone}}</span></div>
+          </div>
+
+          <ol class="phases">
+            <li class="phase"><p class="phase__when mono">{{process.p1when}}</p><h3>{{process.p1name}}</h3><p>{{process.p1text}}</p></li>
+            <li class="phase"><p class="phase__when mono">{{process.p2when}}</p><h3>{{process.p2name}}</h3><p>{{process.p2text}}</p></li>
+            <li class="phase"><p class="phase__when mono">{{process.p3when}}</p><h3>{{process.p3name}}</h3><p>{{process.p3text}}</p></li>
+            <li class="phase"><p class="phase__when mono">{{process.p4when}}</p><h3>{{process.p4name}}</h3><p>{{process.p4text}}</p></li>
+            <li class="phase"><p class="phase__when mono">{{process.p5when}}</p><h3>{{process.p5name}}</h3><p>{{process.p5text}}</p></li>
+            <li class="phase"><p class="phase__when mono">{{process.p6when}}</p><h3>{{process.p6name}}</h3><p>{{process.p6text}}</p></li>
+          </ol>
+          <p class="process__figure mono">{{process.figure}}</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STACK ============ -->
+    <section class="stack-sec section" id="stack" aria-labelledby="stack-title">
+      <div class="container stack-sec__grid">
+        <div>
+          <header class="sec-head">
+            <p class="sec-index" data-reveal><span class="mono">06</span>{{stack.label}}</p>
+            <h2 class="sec-title" id="stack-title" data-split>{{stack.title}}</h2>
+            <p class="sec-lead" data-reveal>{{stack.lead}}</p>
+          </header>
+          <dl class="tools" data-reveal>
+            <div><dt class="mono">{{stack.g1}}</dt><dd>React, Next.js, TypeScript, Flutter, Tailwind</dd></div>
+            <div><dt class="mono">{{stack.g2}}</dt><dd>Node.js, Python, FastAPI, Go, Rust, GraphQL</dd></div>
+            <div><dt class="mono">{{stack.g3}}</dt><dd>OpenAI, Claude, LangGraph, LlamaIndex, PyTorch, OpenCV, Whisper</dd></div>
+            <div><dt class="mono">{{stack.g4}}</dt><dd>PostgreSQL, Supabase, Redis, pgvector, Pinecone</dd></div>
+            <div><dt class="mono">{{stack.g5}}</dt><dd>AWS, Azure, Docker, Kubernetes, Terraform, GitHub Actions</dd></div>
+          </dl>
+        </div>
+        <div class="sphere-wrap" data-reveal>
+          <div class="sphere" id="tag-sphere" aria-hidden="true">
+            <span>Python</span><span>TypeScript</span><span>React</span><span>Next.js</span><span>Node.js</span><span>FastAPI</span><span>Rust</span><span>Go</span>
+            <span>PostgreSQL</span><span>Supabase</span><span>Redis</span><span>Docker</span><span>Kubernetes</span><span>AWS</span><span>Azure</span><span>Terraform</span>
+            <span>LangGraph</span><span>LlamaIndex</span><span>OpenAI</span><span>Claude</span><span>PyTorch</span><span>OpenCV</span><span>Whisper</span><span>pgvector</span>
+            <span>Flutter</span><span>Tailwind</span><span>GraphQL</span><span>GitHub Actions</span>
+          </div>
+          <p class="sphere-wrap__hint mono">{{stack.hint}}</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ENGAGEMENT ============ -->
+    <section class="engage section" id="engage" aria-labelledby="engage-title">
+      <div class="container">
+        <header class="sec-head sec-head--split">
+          <div>
+            <p class="sec-index" data-reveal><span class="mono">07</span>{{engage.label}}</p>
+            <h2 class="sec-title" id="engage-title" data-split>{{engage.title}}</h2>
+          </div>
+          <p class="sec-lead" data-reveal>{{engage.lead}}</p>
+        </header>
+
+        <div class="plans">
+          <article class="plan" data-reveal>
+            <p class="plan__num mono">A</p>
+            <h3>{{engage.m1name}}</h3>
+            <dl>
+              <div><dt class="mono">{{engage.rowFor}}</dt><dd>{{engage.m1for}}</dd></div>
+              <div><dt class="mono">{{engage.rowDuration}}</dt><dd>{{engage.m1duration}}</dd></div>
+              <div><dt class="mono">{{engage.rowHow}}</dt><dd>{{engage.m1how}}</dd></div>
+              <div><dt class="mono">{{engage.rowGet}}</dt><dd>{{engage.m1get}}</dd></div>
+              <div><dt class="mono">{{engage.rowPrice}}</dt><dd>{{engage.m1price}}</dd></div>
+            </dl>
+            <a href="#contact" class="btn btn--primary btn--block" data-subject="{{=engage.m1name}}" data-need="mvp"><span>{{engage.m1cta}}</span><svg class="btn__arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </article>
+          <article class="plan" data-reveal>
+            <p class="plan__num mono">B</p>
+            <h3>{{engage.m2name}}</h3>
+            <dl>
+              <div><dt class="mono">{{engage.rowFor}}</dt><dd>{{engage.m2for}}</dd></div>
+              <div><dt class="mono">{{engage.rowDuration}}</dt><dd>{{engage.m2duration}}</dd></div>
+              <div><dt class="mono">{{engage.rowHow}}</dt><dd>{{engage.m2how}}</dd></div>
+              <div><dt class="mono">{{engage.rowGet}}</dt><dd>{{engage.m2get}}</dd></div>
+              <div><dt class="mono">{{engage.rowPrice}}</dt><dd>{{engage.m2price}}</dd></div>
+            </dl>
+            <a href="#contact" class="btn btn--ghost btn--block" data-subject="{{=engage.m2name}}" data-need="saas"><span>{{engage.m2cta}}</span><svg class="btn__arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </article>
+          <article class="plan" data-reveal>
+            <p class="plan__num mono">C</p>
+            <h3>{{engage.m3name}}</h3>
+            <dl>
+              <div><dt class="mono">{{engage.rowFor}}</dt><dd>{{engage.m3for}}</dd></div>
+              <div><dt class="mono">{{engage.rowDuration}}</dt><dd>{{engage.m3duration}}</dd></div>
+              <div><dt class="mono">{{engage.rowHow}}</dt><dd>{{engage.m3how}}</dd></div>
+              <div><dt class="mono">{{engage.rowGet}}</dt><dd>{{engage.m3get}}</dd></div>
+              <div><dt class="mono">{{engage.rowPrice}}</dt><dd>{{engage.m3price}}</dd></div>
+            </dl>
+            <a href="#contact" class="btn btn--ghost btn--block" data-subject="{{=engage.m3name}}" data-need="ai"><span>{{engage.m3cta}}</span><svg class="btn__arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CAREERS ============ -->
+    <section class="careers section" id="careers" aria-labelledby="careers-title">
+      <div class="container">
+        <header class="sec-head sec-head--split">
+          <div>
+            <p class="sec-index" data-reveal><span class="mono">08</span>{{careers.label}}</p>
+            <h2 class="sec-title" id="careers-title" data-split>{{careers.title}}</h2>
+          </div>
+          <div>
+            <p class="sec-lead" data-reveal>{{careers.lead}}</p>
+            <ul class="perks" data-reveal>
+              <li>{{careers.perk1}}</li><li>{{careers.perk2}}</li><li>{{careers.perk3}}</li><li>{{careers.perk4}}</li>
+            </ul>
+          </div>
+        </header>
+
+        <div class="roles-head" data-reveal>
+          <h3>{{careers.rolesTitle}}</h3>
+          <p class="mono">{{careers.rolesCount}}</p>
+        </div>
+
+        <div class="roles" data-accordion>
+          <article class="role" data-reveal>
+            <h4 class="role__heading">
+              <button class="role__head" type="button" aria-expanded="false" aria-controls="role-1">
+                <span class="role__index mono">01</span><span class="role__title">{{careers.r1title}}</span><span class="role__meta mono">{{careers.type}}</span><span class="role__toggle" aria-hidden="true"></span>
+              </button>
+            </h4>
+            <div class="role__panel" id="role-1" role="region">
+              <div class="role__inner">
+                <div class="role__body">
+                  <p class="role__project">{{careers.project}}: <strong>DocuMind</strong></p>
+                  <p>{{careers.r1text}}</p>
+                  <p class="role__tags mono">Python · FastAPI · LlamaIndex · Next.js · Vector DB</p>
+                </div>
+                <a class="btn btn--primary role__apply" href="mailto:{{email}}?subject={{%careers.applySubject}}%3A%20{{%careers.r1title}}"><span>{{careers.apply}}</span><svg class="btn__arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              </div>
+            </div>
+          </article>
+          <article class="role" data-reveal>
+            <h4 class="role__heading">
+              <button class="role__head" type="button" aria-expanded="false" aria-controls="role-2">
+                <span class="role__index mono">02</span><span class="role__title">{{careers.r2title}}</span><span class="role__meta mono">{{careers.type}}</span><span class="role__toggle" aria-hidden="true"></span>
+              </button>
+            </h4>
+            <div class="role__panel" id="role-2" role="region">
+              <div class="role__inner">
+                <div class="role__body">
+                  <p class="role__project">{{careers.project}}: <strong>RefactorBot</strong></p>
+                  <p>{{careers.r2text}}</p>
+                  <p class="role__tags mono">Python · LangGraph · React · Monaco · LLMs</p>
+                </div>
+                <a class="btn btn--primary role__apply" href="mailto:{{email}}?subject={{%careers.applySubject}}%3A%20{{%careers.r2title}}"><span>{{careers.apply}}</span><svg class="btn__arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              </div>
+            </div>
+          </article>
+          <article class="role" data-reveal>
+            <h4 class="role__heading">
+              <button class="role__head" type="button" aria-expanded="false" aria-controls="role-3">
+                <span class="role__index mono">03</span><span class="role__title">{{careers.r3title}}</span><span class="role__meta mono">{{careers.type}}</span><span class="role__toggle" aria-hidden="true"></span>
+              </button>
+            </h4>
+            <div class="role__panel" id="role-3" role="region">
+              <div class="role__inner">
+                <div class="role__body">
+                  <p class="role__project">{{careers.project}}: <strong>TubeMind</strong></p>
+                  <p>{{careers.r3text}}</p>
+                  <p class="role__tags mono">Next.js · TypeScript · Supabase · Tailwind · AI SDK</p>
+                </div>
+                <a class="btn btn--primary role__apply" href="mailto:{{email}}?subject={{%careers.applySubject}}%3A%20{{%careers.r3title}}"><span>{{careers.apply}}</span><svg class="btn__arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              </div>
+            </div>
+          </article>
+          <article class="role" data-reveal>
+            <h4 class="role__heading">
+              <button class="role__head" type="button" aria-expanded="false" aria-controls="role-4">
+                <span class="role__index mono">04</span><span class="role__title">{{careers.r4title}}</span><span class="role__meta mono">{{careers.type}}</span><span class="role__toggle" aria-hidden="true"></span>
+              </button>
+            </h4>
+            <div class="role__panel" id="role-4" role="region">
+              <div class="role__inner">
+                <div class="role__body">
+                  <p class="role__project">{{careers.project}}: <strong>HireStream</strong></p>
+                  <p>{{careers.r4text}}</p>
+                  <p class="role__tags mono">Python · Whisper · MediaPipe · OpenCV · React</p>
+                </div>
+                <a class="btn btn--primary role__apply" href="mailto:{{email}}?subject={{%careers.applySubject}}%3A%20{{%careers.r4title}}"><span>{{careers.apply}}</span><svg class="btn__arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              </div>
+            </div>
+          </article>
+          <article class="role" data-reveal>
+            <h4 class="role__heading">
+              <button class="role__head" type="button" aria-expanded="false" aria-controls="role-5">
+                <span class="role__index mono">05</span><span class="role__title">{{careers.r5title}}</span><span class="role__meta mono">{{careers.type}}</span><span class="role__toggle" aria-hidden="true"></span>
+              </button>
+            </h4>
+            <div class="role__panel" id="role-5" role="region">
+              <div class="role__inner">
+                <div class="role__body">
+                  <p class="role__project">{{careers.project}}: <strong>Sentinel</strong></p>
+                  <p>{{careers.r5text}}</p>
+                  <p class="role__tags mono">Rust · Node.js · PostgreSQL · LLMs · CI/CD</p>
+                </div>
+                <a class="btn btn--primary role__apply" href="mailto:{{email}}?subject={{%careers.applySubject}}%3A%20{{%careers.r5title}}"><span>{{careers.apply}}</span><svg class="btn__arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="hiring">
+          <h3 class="hiring__title" data-reveal>{{careers.hiringTitle}}</h3>
+          <ol class="hiring__steps">
+            <li data-reveal><span class="hiring__num mono">01</span><h4>{{careers.h1title}}</h4><p>{{careers.h1text}}</p></li>
+            <li data-reveal><span class="hiring__num mono">02</span><h4>{{careers.h2title}}</h4><p>{{careers.h2text}}</p></li>
+            <li data-reveal><span class="hiring__num mono">03</span><h4>{{careers.h3title}}</h4><p>{{careers.h3text}}</p></li>
+            <li data-reveal><span class="hiring__num mono">04</span><h4>{{careers.h4title}}</h4><p>{{careers.h4text}}</p></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="faq section" id="faq" aria-labelledby="faq-title">
+      <div class="container faq__grid">
+        <header class="sec-head">
+          <p class="sec-index" data-reveal><span class="mono">09</span>{{faq.label}}</p>
+          <h2 class="sec-title" id="faq-title" data-split>{{faq.title}}</h2>
+          <p class="sec-lead" data-reveal>{{faq.lead}}</p>
+        </header>
+        <div class="faq__list" data-accordion>
+          <div class="qa" data-reveal><h3><button class="qa__q" type="button" aria-expanded="false" aria-controls="qa-1">{{faq.q1}}<span class="qa__icon" aria-hidden="true"></span></button></h3><div class="qa__a" id="qa-1" role="region"><div><p>{{faq.a1}}</p></div></div></div>
+          <div class="qa" data-reveal><h3><button class="qa__q" type="button" aria-expanded="false" aria-controls="qa-2">{{faq.q2}}<span class="qa__icon" aria-hidden="true"></span></button></h3><div class="qa__a" id="qa-2" role="region"><div><p>{{faq.a2}}</p></div></div></div>
+          <div class="qa" data-reveal><h3><button class="qa__q" type="button" aria-expanded="false" aria-controls="qa-3">{{faq.q3}}<span class="qa__icon" aria-hidden="true"></span></button></h3><div class="qa__a" id="qa-3" role="region"><div><p>{{faq.a3}}</p></div></div></div>
+          <div class="qa" data-reveal><h3><button class="qa__q" type="button" aria-expanded="false" aria-controls="qa-4">{{faq.q4}}<span class="qa__icon" aria-hidden="true"></span></button></h3><div class="qa__a" id="qa-4" role="region"><div><p>{{faq.a4}}</p></div></div></div>
+          <div class="qa" data-reveal><h3><button class="qa__q" type="button" aria-expanded="false" aria-controls="qa-5">{{faq.q5}}<span class="qa__icon" aria-hidden="true"></span></button></h3><div class="qa__a" id="qa-5" role="region"><div><p>{{faq.a5}}</p></div></div></div>
+          <div class="qa" data-reveal><h3><button class="qa__q" type="button" aria-expanded="false" aria-controls="qa-6">{{faq.q6}}<span class="qa__icon" aria-hidden="true"></span></button></h3><div class="qa__a" id="qa-6" role="region"><div><p>{{faq.a6}}</p></div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <canvas class="contact__canvas" id="contact-canvas" aria-hidden="true"></canvas>
+      <div class="contact__shade" aria-hidden="true"></div>
+      <div class="container contact__inner">
+        <div class="contact__copy">
+          <p class="sec-index" data-reveal><span class="mono">10</span>{{contact.label}}</p>
+          <h2 class="contact__title" id="contact-title" data-split>{{contact.title}}</h2>
+          <p class="sec-lead" data-reveal>{{contact.lead}}</p>
+          <dl class="contact__direct" data-reveal>
+            <div><dt class="mono">{{contact.emailLabel}}</dt><dd><a href="mailto:{{email}}" class="link" dir="ltr">{{email}}</a></dd></div>
+            <div><dt class="mono">{{contact.callLabel}}</dt><dd><a href="mailto:{{email}}?subject={{%contact.callSubject}}" class="link">{{contact.callLink}}</a></dd></div>
+          </dl>
+        </div>
+
+        <form class="form" id="contact-form" action="mailto:{{email}}" method="post" enctype="text/plain" novalidate data-reveal>
+          <fieldset class="chips">
+            <legend>{{contact.needsLegend}}</legend>
+            <label><input type="checkbox" name="needs" value="ai"><span>{{contact.need1}}</span></label>
+            <label><input type="checkbox" name="needs" value="mvp"><span>{{contact.need2}}</span></label>
+            <label><input type="checkbox" name="needs" value="saas"><span>{{contact.need3}}</span></label>
+            <label><input type="checkbox" name="needs" value="security"><span>{{contact.need4}}</span></label>
+            <label><input type="checkbox" name="needs" value="cloud"><span>{{contact.need5}}</span></label>
+            <label><input type="checkbox" name="needs" value="other"><span>{{contact.need6}}</span></label>
+          </fieldset>
+          <div class="field-row">
+            <div class="field">
+              <input type="text" id="f-name" name="name" placeholder=" " autocomplete="name" maxlength="80" required>
+              <label for="f-name">{{contact.name}}</label>
+            </div>
+            <div class="field">
+              <input type="email" id="f-email" name="email" placeholder=" " autocomplete="email" maxlength="120" required dir="ltr">
+              <label for="f-email">{{contact.email}}</label>
+            </div>
+          </div>
+          <div class="field">
+            <input type="text" id="f-company" name="company" placeholder=" " autocomplete="organization" maxlength="100">
+            <label for="f-company">{{contact.company}} <em>{{contact.optional}}</em></label>
+          </div>
+          <div class="field">
+            <textarea id="f-message" name="message" rows="4" placeholder=" " maxlength="1500" required></textarea>
+            <label for="f-message">{{contact.message}}</label>
+          </div>
+          <div class="form__foot">
+            <button type="submit" class="btn btn--primary btn--lg" data-magnetic><span>{{contact.submit}}</span><svg class="btn__arrow" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+            <p class="form__note" id="form-note" role="status" aria-live="polite">{{contact.note}}</p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="#top" class="brand" aria-label="{{=ui.home}}">
+            <svg class="brand__mark" aria-hidden="true"><use href="#hz-mark"/></svg>
+            <span class="brand__word">HAZEON</span>
+          </a>
+          <p>{{footer.text}}</p>
+        </div>
+        <nav class="footer__col" aria-label="{{=footer.services}}">
+          <h3 class="mono">{{footer.services}}</h3>
+          <a href="#services">{{services.s1title}}</a>
+          <a href="#services">{{services.s2title}}</a>
+          <a href="#services">{{services.s3title}}</a>
+          <a href="#services">{{services.s4title}}</a>
+        </nav>
+        <nav class="footer__col" aria-label="{{=footer.company}}">
+          <h3 class="mono">{{footer.company}}</h3>
+          <a href="#studio">{{footer.about}}</a>
+          <a href="#process">{{nav.process}}</a>
+          <a href="#careers">{{nav.careers}}</a>
+          <a href="#faq">{{nav.faq}}</a>
+        </nav>
+        <div class="footer__col">
+          <h3 class="mono">{{footer.contact}}</h3>
+          <a href="mailto:{{email}}" dir="ltr">{{email}}</a>
+          <a href="{{github}}" target="_blank" rel="noopener noreferrer">GitHub<span class="sr-only"> ({{ui.newTab}})</span> <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="footer__col footer__prefs">
+          <h3 class="mono">{{footer.preferences}}</h3>
+          {{langLinks}}
+          <div class="pref">
+            <span class="pref__label">{{footer.theme}}</span>
+            <div class="seg" role="group" aria-label="{{=footer.theme}}">
+              <button type="button" data-set-theme="light" aria-pressed="false">{{footer.light}}</button>
+              <button type="button" data-set-theme="dark" aria-pressed="true">{{footer.dark}}</button>
+            </div>
+          </div>
+          <div class="pref">
+            <span class="pref__label">{{footer.motion}}</span>
+            <div class="seg" role="group" aria-label="{{=footer.motion}}">
+              <button type="button" data-set-motion="full" aria-pressed="true">{{footer.motionOn}}</button>
+              <button type="button" data-set-motion="reduced" aria-pressed="false">{{footer.motionOff}}</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__wordmark" aria-hidden="true"><span>HAZEON</span></div>
+      <div class="footer__bottom">
+        <p>© {{year}} {{legalName}}. {{footer.rights}}</p>
+        <a href="#top" class="footer__top-link">{{footer.backTop}} <span aria-hidden="true">↑</span></a>
+      </div>
+    </div>
+  </footer>
+
+  <script type="application/json" id="i18n">{{i18nClient}}</script>
+</body>
+</html>
