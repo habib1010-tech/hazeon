@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://habib1010-tech.github.io/hazeon/sitemap.xml
